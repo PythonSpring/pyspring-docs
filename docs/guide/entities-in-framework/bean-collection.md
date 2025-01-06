@@ -140,6 +140,11 @@ class MyProperties(Properties):
     key = "my_properties"
     my_config_value: str
 
+# this may be a third party class that you cannot modify
+class MyBean: 
+    def __init__(self, config_value: str):
+        self.config_value = config_value
+
 
 class MyBeanCollection(BeanCollection):
     properties: MyProperties
@@ -149,9 +154,6 @@ class MyBeanCollection(BeanCollection):
         return MyBean(cls.properties.my_config_value)
 
 
-class MyBean:
-    def __init__(self, config_value: str):
-        self.config_value = config_value
 
 
 class ExampleProperties(Properties):
