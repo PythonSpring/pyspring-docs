@@ -100,11 +100,12 @@ Practical Example
 Below is an example showcasing the DI system in action:
 
 ```py
-class ExampleProperties:
+from py_spring_core import Component, Properties
+class ExampleProperties(Properties):
     key: str
     value: str
 
-class ExampleService:
+class ExampleService(Component):
     example_properties: ExampleProperties
 
     def post_construct(self):
@@ -113,7 +114,7 @@ class ExampleService:
     def pre_destroy(self):
         print("ExampleService is being cleaned up")
 
-class AnotherExampleService:
+class AnotherExampleService(Component):
     example_service: ExampleService
 
     def post_construct(self):
