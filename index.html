@@ -643,9 +643,6 @@
 <h3 id="technologies-used-in-pyspring">Technologies Used in PySpring</h3>
 <ul>
 <li><strong>FastAPI</strong>: For the web server layer.</li>
-</ul>
-<!-- - **SQLModel**: As the ORM (Object-Relational Mapper). -->
-<ul>
 <li><strong>Pydantic</strong>: For data validation.</li>
 </ul>
 <p><strong>PySpring</strong> combines these technologies to deliver a seamless development experience for building modern, scalable applications.</p>
@@ -653,9 +650,6 @@
 <ul>
 <li>
 <p><strong>Application Initialization</strong>: <strong>PySpringApplication</strong> class serves as the main entry point for the <strong>PySpring</strong> application. It initializes the application from a configuration file, scans the application source directory for Python files, and groups them into class files and model files</p>
-</li>
-<li>
-<p><strong>Model Import and Table Creation</strong>: <strong>PySpring</strong> dynamically imports model modules and creates SQLModel tables based on the imported models. It supports SQLAlchemy for database operations.</p>
 </li>
 <li>
 <p><strong>Application Context Management</strong>: <strong>PySpring</strong> manages the application context and dependency injection. It registers application entities such as components, controllers, bean collections, and properties. It also initializes the application context and injects dependencies.</p>
@@ -674,6 +668,12 @@
 </li>
 <li>
 <p><strong>Builtin FastAPI Integration</strong>: <strong>PySpring</strong> integrates with <code>FastAPI</code>, a modern, fast (high-performance), web framework for building APIs with Python. It leverages FastAPI's features for routing, request handling, and server configuration.</p>
+</li>
+<li>
+<p><strong>OpenAPI Generation</strong>: Since <strong>PySpring</strong> leverages <code>FastAPI</code>, it automatically generates <a href="https://fastapi.tiangolo.com/features/#based-on-open-standards">OpenAPI</a> documentation for the application. The API routes, endpoints, and data models are used to create interactive, self-updating OpenAPI documentation, which can be easily accessed via FastAPI's built-in web interface.</p>
+</li>
+<li>
+<p><strong>Type-Safety</strong>: The framework is type-safe when used properly. All dependency injection (DI) is determined based on Python type hints, ensuring that dependencies are injected in a consistent and reliable manner. This feature enables better development practices by reducing runtime errors and improving code clarity.</p>
 </li>
 </ul>
 <h3 id="getting-started">Getting Started</h3>
