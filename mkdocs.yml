@@ -1,5 +1,9 @@
 site_name: PySpring
 site_url: https://mydomain.org/mysite
+# Add the GitHub repository details
+repo_url: https://github.com/PythonSpring/pyspring-core
+repo_name: pyspring-core
+
 theme:
   name: material
   features:
