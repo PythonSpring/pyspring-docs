@@ -12,15 +12,12 @@
 ### Technologies Used in PySpring
 
 - **FastAPI**: For the web server layer.
-<!-- - **SQLModel**: As the ORM (Object-Relational Mapper). -->
 - **Pydantic**: For data validation.
 
 **PySpring** combines these technologies to deliver a seamless development experience for building modern, scalable applications.
 ### Key Features
 
 - **Application Initialization**: **PySpringApplication** class serves as the main entry point for the **PySpring** application. It initializes the application from a configuration file, scans the application source directory for Python files, and groups them into class files and model files
-
-- **Model Import and Table Creation**: **PySpring** dynamically imports model modules and creates SQLModel tables based on the imported models. It supports SQLAlchemy for database operations.
 
 - **Application Context Management**: **PySpring** manages the application context and dependency injection. It registers application entities such as components, controllers, bean collections, and properties. It also initializes the application context and injects dependencies.
 
@@ -33,6 +30,10 @@
 - **Framework Modules**: **PySpring** allows the integration of additional framework modules to extend the functionality of the application. Modules can provide additional routes, middlewares, or any other custom functionality required by the application.
 
 - **Builtin FastAPI Integration**: **PySpring** integrates with `FastAPI`, a modern, fast (high-performance), web framework for building APIs with Python. It leverages FastAPI's features for routing, request handling, and server configuration.
+
+- **OpenAPI Generation**: Since **PySpring** leverages `FastAPI`, it automatically generates [OpenAPI](https://fastapi.tiangolo.com/features/#based-on-open-standards) documentation for the application. The API routes, endpoints, and data models are used to create interactive, self-updating OpenAPI documentation, which can be easily accessed via FastAPI's built-in web interface.
+
+- **Type-Safety**: The framework is type-safe when used properly. All dependency injection (DI) is determined based on Python type hints, ensuring that dependencies are injected in a consistent and reliable manner. This feature enables better development practices by reducing runtime errors and improving code clarity.
 
 ### Getting Started
 To get started with **PySpring**, follow these steps:
