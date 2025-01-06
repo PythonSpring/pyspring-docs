@@ -15,7 +15,8 @@ To inject a dependency into a component, declare an attribute with a type hint f
 **Example:**
 
 ```py
-class ExampleService:
+from py_spring_core import Component
+class ExampleService(Component):
     example_properties: ExampleProperties
 ```
 
@@ -48,7 +49,8 @@ Once injected, dependencies can be accessed directly using the declared attribut
 **Example:**
 
 ```py
-class ExampleService:
+from py_spring_core import Component
+class ExampleService(Component):
     example_properties: ExampleProperties
 
     def display_property(self):
@@ -63,14 +65,14 @@ Here, `example_properties` is automatically injected, and its value is accessed 
 
 PySpring supports lifecycle methods to manage component behavior:
 
--   `**post_construct()**`: Called after dependencies are injected, allowing initialization with injected resources.
+-   `post_construct()`: Called after dependencies are injected, allowing initialization with injected resources.
 
--   `**pre_destroy()**`: Called before the component is destroyed, enabling cleanup actions.
+-   `pre_destroy()`: Called before the component is destroyed, enabling cleanup actions.
 
 **Example:**
 
 ```py
-class ExampleService:
+class ExampleService(Component):
     example_properties: ExampleProperties
 
     def post_construct(self):
