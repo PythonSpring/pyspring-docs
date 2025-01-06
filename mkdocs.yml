@@ -31,6 +31,7 @@ nav:
           - Component: guide/entities-in-framework/component.md
           - Properties: guide/entities-in-framework/properties.md
           - REST Controller: guide/entities-in-framework/rest-controller.md
+          - Bean Collection:  guide/entities-in-framework/bean-collection.md
       - Dependency Injection:
           - What is Dependency Injection: guide/dependency-injection/what-is-denpendency-injection.md
           - Auto Dependency Injection: guide/dependency-injection/auto-deppendency-injection.md
