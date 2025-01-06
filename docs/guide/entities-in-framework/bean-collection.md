@@ -58,7 +58,7 @@ class MyProperties(Properties):
 class MyBeanCollection(BeanCollection):
     properties: MyProperties
     @classmethod
-    def createMyBean(cls) -> MyBean:
+    def create_my_bean(cls) -> MyBean:
         return MyBean(cls.properties.my_config_value)
 
 class MyBean:
