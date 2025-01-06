@@ -1,0 +1,45 @@
+site_name: PySpring
+site_url: https://mydomain.org/mysite
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - navigation.expand
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: green
+      accent: deep purple
+
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: blue
+      accent: deep orange
+
+    
+
+nav:
+  - Overview: index.md
+  - Guide:
+      - Entityies In Framework:
+          - Component: guide/entities-in-framework/component.md
+          - Properties: guide/entities-in-framework/properties.md
+          - REST Controller: guide/entities-in-framework/rest-controller.md
+      - Dependency Injection:
+          - What is Dependency Injection: guide/dependency-injection/what-is-denpendency-injection.md
+          - Auto Dependency Injection: guide/dependency-injection/auto-deppendency-injection.md
+      
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
