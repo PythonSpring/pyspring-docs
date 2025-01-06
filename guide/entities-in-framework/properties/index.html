@@ -770,6 +770,7 @@
 <p>The <code>Properties</code> class in PySpring provides a way to manage application-specific configurations. It allows you to load properties from a file and inject them into components.</p>
 <h2 id="key-features">Key Features</h2>
 <ul>
+<li><strong>Properties Registration</strong>: Properties classes are registered within the <code>ApplicationContext</code>, similar to components, controllers, and bean collections.</li>
 <li><strong>Configuration Management</strong>:  <code>Properties</code> classes provide a structured way to manage application settings. They are loaded from a properties file, typically in JSON or YAML format.</li>
 <li><strong>Unique Identifiers</strong>: Each <code>Properties</code> class has a unique key (<code>__key__</code>) that is used to identify it within the application. This key must be set as a class-level attribute in your <code>Properties</code> subclass.</li>
 <li><strong>Automatic Loading and Injection</strong>: PySpring automatically loads properties during the application initialization process and injects them into components where they are needed.</li>
