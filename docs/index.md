@@ -35,6 +35,10 @@
 
 - **Type-Safety**: The framework is type-safe when used properly. All dependency injection (DI) is determined based on Python type hints, ensuring that dependencies are injected in a consistent and reliable manner. This feature enables better development practices by reducing runtime errors and improving code clarity.
 
+- **Qualifier Support**: PySpring supports qualifiers for dependency injection, allowing you to specify which implementation to inject when multiple implementations of the same interface exist. This is achieved using Python's `Annotated` type hints, making it easy to manage complex dependency scenarios.
+
+- **Component Registration Validation**: The framework includes robust validation to prevent duplicate component registration and provides clear error messages for developers. This ensures that your application maintains a clean and consistent component structure.
+
 ### Getting Started
 To get started with **PySpring**, follow these steps:
 

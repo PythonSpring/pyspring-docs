@@ -96,6 +96,111 @@ PySpring's DI system supports injecting the following:
 
 * * * * *
 
+### 6\. Qualifier Support
+
+PySpring supports qualifiers for dependency injection, allowing you to specify which implementation to inject when multiple implementations of the same interface exist.
+
+#### Using Qualifiers:
+
+```py
+from typing import Annotated
+from py_spring_core import Component
+
+class ServiceConsumer(Component):
+    # Will inject the specifically qualified implementation
+    service_a: Annotated[AbstractService, "ServiceA"]
+    service_b: Annotated[AbstractService, "ServiceB"]
+
+    def post_construct(self) -> None:
+        print(self.service_a.process())  # Uses ServiceA
+        print(self.service_b.process())  # Uses ServiceB
+```
+
+#### Complete Example with Qualifiers:
+
+```py
+from abc import ABC, abstractmethod
+from typing import Annotated
+from py_spring_core import Component
+from py_spring_core.core.entities.component import ComponentScope
+
+# Abstract base class
+class AbstractExample(Component, ABC):
+    class Config:
+        scope = ComponentScope.Singleton
+
+    @abstractmethod
+    def say_hello(self) -> str: ...
+
+# First implementation
+class ExampleA(AbstractExample):
+    class Config:
+        name = "ExampleA"
+        scope = ComponentScope.Singleton
+
+    def say_hello(self) -> str:
+        return "Hello from Example A!"
+
+# Second implementation
+class ExampleB(AbstractExample):
+    class Config:
+        name = "ExampleB"
+        scope = ComponentScope.Singleton
+
+    def say_hello(self) -> str:
+        return "Hello from Example B!"
+
+# Service using both implementations
+class TestService(Component):
+    example_a: Annotated[AbstractExample, "ExampleA"]
+    example_b: Annotated[AbstractExample, "ExampleB"]
+
+    def post_construct(self) -> None:
+        print(self.example_a.say_hello())  # Output: "Hello from Example A!"
+        print(self.example_b.say_hello())  # Output: "Hello from Example B!"
+```
+
+### 7\. Component Registration Validation
+
+PySpring now includes validation to prevent duplicate component registration and provides clear error messages for developers.
+
+#### Preventing Duplicate Registration:
+
+```py
+from py_spring_core import Component
+from py_spring_core.core.entities.component import ComponentScope
+
+# First registration of MyService
+class MyService(Component):
+    class Config:
+        name = "MyService"
+        scope = ComponentScope.Singleton
+
+    def do_something(self) -> str:
+        return "Service is working!"
+
+# Attempting to register the same component again will raise ValueError
+try:
+    class MyService(Component):  # This will raise ValueError
+        class Config:
+            name = "MyService"
+            scope = ComponentScope.Singleton
+
+        def do_something(self) -> str:
+            return "This will never be registered!"
+except ValueError as e:
+    print(f"Error: {e}")  # Output: "Error: [COMPONENT REGISTRATION ERROR] Component: MyService already registered"
+```
+
+#### Key Points for Component Registration:
+
+1. Each component must have a unique name (either explicitly set in Config or derived from the class name)
+2. Attempting to register a component with an existing name will raise a ValueError
+3. The name in Config can be used to override the default class name
+4. All components must have a valid implementation of any abstract methods they inherit
+
+* * * * *
+
 Practical Example
 -----------------
 
