@@ -39,6 +39,8 @@
 
 - **Component Registration Validation**: The framework includes robust validation to prevent duplicate component registration and provides clear error messages for developers. This ensures that your application maintains a clean and consistent component structure.
 
+- **Decorator-Based Route Mapping**: PySpring now supports a more declarative approach to route definition using decorators, similar to Spring's annotation-based routing. This provides a cleaner and more type-safe way to define API endpoints with better IDE support and code organization.
+
 ### Getting Started
 To get started with **PySpring**, follow these steps:
 
