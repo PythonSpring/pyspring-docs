@@ -48,17 +48,18 @@ class MyComponent(Component):
 
 ### Subscribing to Events
 
-Use the `@EventListener` decorator to subscribe to events:
+Use the `@EventListener` decorator to subscribe to events. Event listeners must inherit from the `Component` class:
 
 ```python
 from py_spring_core import Component, EventListener
 
-@Component
-class MyListener:
+class MyListener(Component):
     @EventListener(MyEvent)
     def handle_event(self, event: MyEvent):
         print(f"Received event: {event.message}")
 ```
+
+The event listener will be automatically registered during application startup and will receive events of the specified type.
 
 ## Technical Details
 
@@ -122,12 +123,18 @@ class UserService(Component):
         ))
         return user_id
 
-# Listener component
-@Component
-class UserEventListener:
+# Listener component using inheritance
+class UserEventListener(Component):
     @EventListener(UserCreatedEvent)
     def handle_user_created(self, event: UserCreatedEvent):
         print(f"New user created: {event.username} (ID: {event.user_id})")
+
+# Alternative listener using decorator
+@Component
+class UserNotificationListener:
+    @EventListener(UserCreatedEvent)
+    def send_welcome_email(self, event: UserCreatedEvent):
+        print(f"Sending welcome email to: {event.username}")
 ```
 
 ## Version Information
