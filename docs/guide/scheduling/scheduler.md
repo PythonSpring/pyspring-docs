@@ -6,10 +6,10 @@ The PySpring Scheduler provides a robust and flexible way to manage scheduled ta
 Installation
 -----------
 
-Install the package using pip:
+Since the package is under active development, it can only be installed directly from the git repository:
 
 ```bash
-pip install py-spring-scheduler
+pip install git+ssh://git@github.com/PythonSpring/pyspring-scheduler.git
 ```
 
 * * * * *
