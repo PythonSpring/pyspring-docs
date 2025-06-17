@@ -4,11 +4,10 @@ The Event System in PySpring provides a powerful way to implement event-driven a
 
 ## Overview
 
-The Event System consists of three main components:
+The Event System consists of two main components:
 
 1. `ApplicationEventPublisher`: The core component for publishing events
 2. `ApplicationEventHandlerRegistry`: Manages event handler registration and execution
-3. `ApplicationContextRequired`: Interface for components needing application context access
 
 ## Key Features
 
