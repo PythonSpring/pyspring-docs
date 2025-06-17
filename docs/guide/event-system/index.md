@@ -70,29 +70,18 @@ The event listener will be automatically registered during application startup a
 - Event handlers are automatically registered during application startup
 - Events are validated using Pydantic models
 
-### Thread Safety
-
-The event system is designed to be thread-safe:
-- Event publishing is thread-safe
-- Event handling occurs in a separate thread
-- The event queue ensures ordered processing
 
 ## Best Practices
 
 1. **Event Design**
-   - Keep events focused and specific
-   - Use meaningful event names
-   - Include only necessary data in events
+    - Keep events focused and specific
+    - Use meaningful event names
+    - Include only necessary data in events
 
 2. **Event Handling**
-   - Keep event handlers lightweight
-   - Avoid long-running operations in event handlers
-   - Use proper error handling in event handlers
-
-3. **Performance**
-   - Be mindful of event frequency
-   - Consider using event filtering when appropriate
-   - Monitor event queue size in production
+    - Keep event handlers lightweight
+    - Avoid long-running operations in event handlers
+    - Use proper error handling in event handlers
 
 ## Example
 
@@ -123,18 +112,17 @@ class UserService(Component):
         ))
         return user_id
 
-# Listener component using inheritance
+
+class UserNotificationListener(Component):
+    @EventListener(UserCreatedEvent)
+    def send_welcome_email(self, event: UserCreatedEvent):
+        print(f"Sending welcome email to: {event.username}")
+
 class UserEventListener(Component):
     @EventListener(UserCreatedEvent)
     def handle_user_created(self, event: UserCreatedEvent):
         print(f"New user created: {event.username} (ID: {event.user_id})")
 
-# Alternative listener using decorator
-@Component
-class UserNotificationListener:
-    @EventListener(UserCreatedEvent)
-    def send_welcome_email(self, event: UserCreatedEvent):
-        print(f"Sending welcome email to: {event.username}")
 ```
 
 ## Version Information
