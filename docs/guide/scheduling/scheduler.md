@@ -75,7 +75,7 @@ The `@Scheduled` decorator is the primary way to create scheduled tasks. It supp
 #### Interval Trigger
 
 ```python
-from pyspring_scheduler import Scheduled, IntervalTrigger
+from py_spring_scheduler import Scheduled, IntervalTrigger
 
 @Scheduled(trigger=IntervalTrigger(seconds=5))
 def my_interval_task():
@@ -86,7 +86,7 @@ def my_interval_task():
 #### Cron Trigger
 
 ```python
-from pyspring_scheduler import Scheduled, CronTrigger
+from py_spring_scheduler import Scheduled, CronTrigger
 
 @Scheduled(trigger=CronTrigger(cron="0 0 * * *"))
 def my_cron_task():
@@ -99,7 +99,7 @@ def my_cron_task():
 You can combine multiple triggers using `AndTrigger` and `OrTrigger`:
 
 ```python
-from pyspring_scheduler import Scheduled, IntervalTrigger, CronTrigger, AndTrigger, OrTrigger
+from py_spring_scheduler import Scheduled, IntervalTrigger, CronTrigger, AndTrigger, OrTrigger
 
 # Using OrTrigger (runs if either trigger condition is met)
 @Scheduled(trigger=OrTrigger([
@@ -129,7 +129,7 @@ Scheduled tasks can be defined within PySpring components, allowing you to lever
 
 ```python
 from py_spring_core import Component
-from pyspring_scheduler import Scheduled, IntervalTrigger
+from py_spring_scheduler import Scheduled, IntervalTrigger
 
 class MyComponent(Component):
     @Scheduled(trigger=IntervalTrigger(seconds=3))
@@ -144,7 +144,7 @@ Components can be injected and used within scheduled tasks:
 
 ```python
 from py_spring_core import Component
-from pyspring_scheduler import Scheduled, IntervalTrigger
+from py_spring_scheduler import Scheduled, IntervalTrigger
 
 class Service(Component):
     def do_something(self):
