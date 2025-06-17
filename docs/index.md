@@ -41,6 +41,8 @@
 
 - **Decorator-Based Route Mapping**: PySpring now supports a more declarative approach to route definition using decorators, similar to Spring's annotation-based routing. This provides a cleaner and more type-safe way to define API endpoints with better IDE support and code organization.
 
+- **Event System**: PySpring provides a powerful event system that enables event-driven architecture in your applications. It features thread-safe event publishing, decorator-based event listeners, and asynchronous event processing. The system is fully integrated with the component system and provides type-safe events using Pydantic models.
+
 ### Getting Started
 To get started with **PySpring**, follow these steps:
 

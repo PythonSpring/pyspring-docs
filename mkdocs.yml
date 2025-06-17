@@ -41,6 +41,8 @@ nav:
           - Auto Dependency Injection: guide/dependency-injection/auto-deppendency-injection.md
       - Scheduling:
           - Scheduler: guide/scheduling/scheduler.md
+      - Event System:
+          - Event Publication/Subscription: guide/event-system/index.md
       
 markdown_extensions:
   - pymdownx.highlight:
