@@ -793,9 +793,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
+  <a href="#transaction-management" class="md-nav__link">
     <span class="md-ellipsis">
-      Limitations
+      Transaction Management
     </span>
   </a>
   
@@ -1068,9 +1068,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
+  <a href="#transaction-management" class="md-nav__link">
     <span class="md-ellipsis">
-      Limitations
+      Transaction Management
     </span>
   </a>
   
@@ -1175,14 +1175,13 @@
 <li><strong>Custom SQL Queries</strong>: PySpringModel supports custom SQL queries using the <code>@Query</code> decorator for complex database operations.</li>
 <li><strong>RESTful API Integration</strong>: PySpringModel integrates with the PySpring framework to automatically generate basic table CRUD APIs for your SQLModel entities.</li>
 </ul>
-<h2 id="limitations">Limitations</h2>
-<p><strong>Important</strong>: PySpringModel currently only supports <strong>read operations</strong> (queries). The following features are not yet supported:</p>
+<h2 id="transaction-management">Transaction Management</h2>
+<p>PySpringModel provides fine-grained control over database transactions through the <code>is_modifying</code> parameter in custom queries. This allows you to specify whether a query operation should automatically commit changes to the database:</p>
 <ul>
-<li><strong>Model Editing</strong>: You cannot modify model instances directly through PySpringModel</li>
-<li><strong>Write Operations</strong>: Create, Update, and Delete operations are not implemented</li>
-<li><strong>Data Mutations</strong>: Any operations that would change the database state are not supported</li>
+<li><strong>Read Operations</strong>: Default behavior with <code>is_modifying=False</code> (no automatic commit)</li>
+<li><strong>Modifying Operations</strong>: Set <code>is_modifying=True</code> for INSERT, UPDATE, DELETE operations that should commit</li>
+<li><strong>Session Control</strong>: Explicit control over when database changes are persisted</li>
 </ul>
-<p>PySpringModel is designed primarily for querying and reading data from your database. For write operations, you'll need to use SQLAlchemy directly or implement custom solutions.</p>
 <h2 id="installation">Installation</h2>
 <p><strong>Note</strong>: PySpringModel is currently under active development and is not yet available on PyPI. Please install it directly from the GitHub repository:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/PythonSpring/pyspring-model.git
@@ -1223,6 +1222,16 @@
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="nd">@Query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM user WHERE age BETWEEN </span><span class="si">{min_age}</span><span class="s2"> AND </span><span class="si">{max_age}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_users_by_age_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_age</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">max_age</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>    <span class="c1"># Modifying operations with commit control</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>    <span class="nd">@Query</span><span class="p">(</span><span class="s2">&quot;INSERT INTO user (name, email, age) VALUES (</span><span class="si">{name}</span><span class="s2">, </span><span class="si">{email}</span><span class="s2">, </span><span class="si">{age}</span><span class="s2">) RETURNING *&quot;</span><span class="p">,</span> <span class="n">is_modifying</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">create_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">User</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>    <span class="nd">@Query</span><span class="p">(</span><span class="s2">&quot;UPDATE user SET name = </span><span class="si">{name}</span><span class="s2">, age = </span><span class="si">{age}</span><span class="s2"> WHERE email = </span><span class="si">{email}</span><span class="s2"> RETURNING *&quot;</span><span class="p">,</span> <span class="n">is_modifying</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">update_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">User</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>    <span class="nd">@Query</span><span class="p">(</span><span class="s2">&quot;DELETE FROM user WHERE id = </span><span class="si">{user_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">is_modifying</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">delete_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
 </span></code></pre></div>
 <h3 id="3-use-in-your-application">3. Use in Your Application</h3>
 <p>Use your repository in your service or controller:</p>
@@ -1249,6 +1258,7 @@
 <ul>
 <li>Learn about <a href="dynamic-queries/">Dynamic Query Generation</a></li>
 <li>Explore <a href="custom-queries/">Custom SQL Queries</a></li>
+<li>Master <a href="modifiable-queries.md">Modifiable Queries with Commit Control</a></li>
 <li>Understand <a href="crud-operations/">Built-in CRUD Operations</a></li>
 <li>See <a href="examples/">Complete Examples</a></li>
 <li>Dive into the <a href="sql-statement-algorithm/">SQL Statement Generation Algorithm</a> </li>
