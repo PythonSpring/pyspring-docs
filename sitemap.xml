@@ -2,34 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mydomain.org/mysite/</loc>
-         <lastmod>2025-06-17</lastmod>
+         <lastmod>2025-06-19</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/guide/dependency-injection/auto-deppendency-injection/</loc>
-         <lastmod>2025-06-17</lastmod>
+         <lastmod>2025-06-19</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/guide/dependency-injection/what-is-denpendency-injection/</loc>
-         <lastmod>2025-06-17</lastmod>
+         <lastmod>2025-06-19</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/guide/entities-in-framework/bean-collection/</loc>
-         <lastmod>2025-06-17</lastmod>
+         <lastmod>2025-06-19</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/guide/entities-in-framework/component/</loc>
-         <lastmod>2025-06-17</lastmod>
+         <lastmod>2025-06-19</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/guide/entities-in-framework/properties/</loc>
-         <lastmod>2025-06-17</lastmod>
+         <lastmod>2025-06-19</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/guide/entities-in-framework/rest-controller/</loc>
-         <lastmod>2025-06-17</lastmod>
+         <lastmod>2025-06-19</lastmod>
+    </url>
+    <url>
+         <loc>https://mydomain.org/mysite/guide/event-system/</loc>
+         <lastmod>2025-06-19</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/guide/scheduling/scheduler/</loc>
-         <lastmod>2025-06-17</lastmod>
+         <lastmod>2025-06-19</lastmod>
     </url>
 </urlset>
