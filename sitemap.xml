@@ -33,6 +33,34 @@
          <lastmod>2025-06-19</lastmod>
     </url>
     <url>
+         <loc>https://mydomain.org/mysite/guide/pyspring-model/</loc>
+         <lastmod>2025-06-19</lastmod>
+    </url>
+    <url>
+         <loc>https://mydomain.org/mysite/guide/pyspring-model/crud-operations/</loc>
+         <lastmod>2025-06-19</lastmod>
+    </url>
+    <url>
+         <loc>https://mydomain.org/mysite/guide/pyspring-model/custom-queries/</loc>
+         <lastmod>2025-06-19</lastmod>
+    </url>
+    <url>
+         <loc>https://mydomain.org/mysite/guide/pyspring-model/dynamic-queries/</loc>
+         <lastmod>2025-06-19</lastmod>
+    </url>
+    <url>
+         <loc>https://mydomain.org/mysite/guide/pyspring-model/examples/</loc>
+         <lastmod>2025-06-19</lastmod>
+    </url>
+    <url>
+         <loc>https://mydomain.org/mysite/guide/pyspring-model/skip-auto-implementation/</loc>
+         <lastmod>2025-06-19</lastmod>
+    </url>
+    <url>
+         <loc>https://mydomain.org/mysite/guide/pyspring-model/sql-statement-algorithm/</loc>
+         <lastmod>2025-06-19</lastmod>
+    </url>
+    <url>
          <loc>https://mydomain.org/mysite/guide/scheduling/scheduler/</loc>
          <lastmod>2025-06-19</lastmod>
     </url>
