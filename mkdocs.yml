@@ -50,6 +50,7 @@ nav:
           - CRUD Operations: guide/pyspring-model/crud-operations.md
           - Skip Auto Implementation: guide/pyspring-model/skip-auto-implementation.md
           - Complete Examples: guide/pyspring-model/examples.md
+          - Deep Dive on SQL statement generation: guide/pyspring-model/sql-statement-algorithm.md
      
       
 markdown_extensions:

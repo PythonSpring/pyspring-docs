@@ -109,4 +109,5 @@ PySpringApplication(
 - Learn about [Dynamic Query Generation](dynamic-queries.md)
 - Explore [Custom SQL Queries](custom-queries.md)
 - Understand [Built-in CRUD Operations](crud-operations.md)
-- See [Complete Examples](examples.md) 
+- See [Complete Examples](examples.md)
+- Dive into the [SQL Statement Generation Algorithm](sql-statement-algorithm.md) 
