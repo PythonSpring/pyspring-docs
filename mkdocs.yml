@@ -43,6 +43,12 @@ nav:
           - Intro to Event System: guide/event-system/index.md
       - Scheduling:
           - Scheduler: guide/scheduling/scheduler.md
+      - PySpringModel:
+          - Overview: guide/pyspring-model/index.md
+          - Dynamic Queries: guide/pyspring-model/dynamic-queries.md
+          - Custom SQL Queries: guide/pyspring-model/custom-queries.md
+          - CRUD Operations: guide/pyspring-model/crud-operations.md
+          - Complete Examples: guide/pyspring-model/examples.md
      
       
 markdown_extensions:
