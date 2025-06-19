@@ -1,9 +1,6 @@
 # SQL Statement Generation Algorithm
 
 ## Overview
-
-
-## Overview
 In PySpringModel, repository methods can be defined using expressive method names like `find_by_email_and_age_or_status`. These method names are parsed and dynamically translated into SQL queries. This allows developers to define powerful queries declaratively without writing raw SQL or using query builders explicitly.
 
 When you define a repository method like `find_by_email_and_age_or_status`, PySpringModel needs to convert this method name into a valid SQL query. The algorithm parses the method name, extracts field names and boolean operators, then constructs the appropriate WHERE clause.
