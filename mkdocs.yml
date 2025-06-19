@@ -48,6 +48,7 @@ nav:
           - Dynamic Queries: guide/pyspring-model/dynamic-queries.md
           - Custom SQL Queries: guide/pyspring-model/custom-queries.md
           - CRUD Operations: guide/pyspring-model/crud-operations.md
+          - Skip Auto Implementation: guide/pyspring-model/skip-auto-implementation.md
           - Complete Examples: guide/pyspring-model/examples.md
      
       
