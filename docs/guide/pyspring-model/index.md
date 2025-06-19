@@ -23,8 +23,10 @@ PySpringModel is designed primarily for querying and reading data from your data
 
 ## Installation
 
+**Note**: PySpringModel is currently under active development and is not yet available on PyPI. Please install it directly from the GitHub repository:
+
 ```bash
-pip install pyspring-model
+pip install git+https://github.com/PythonSpring/pyspring-model.git
 ```
 
 ## Quick Start
