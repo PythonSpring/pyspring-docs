@@ -1,8 +1,6 @@
 # Complete Examples
 
-**Note**: PySpringModel currently only supports **read operations**. All examples in this page focus on querying and reading data from the database.
-
-This page provides comprehensive examples showing how to use PySpringModel for data retrieval in real-world scenarios.
+This page provides comprehensive examples showing how to use PySpringModel for both read operations and modifying operations with commit control in real-world scenarios.
 
 ## Basic User Management System
 
@@ -56,13 +54,33 @@ class UserRepository(CrudRepository[int, User]):
     
     @Query("SELECT COUNT(*) as count FROM user WHERE status = {status}")
     def count_users_by_status(self, status: str) -> int: ...
+    
+    # Modifying operations with commit control
+    @Query("INSERT INTO user (name, email, age, status) VALUES ({name}, {email}, {age}, {status}) RETURNING *", is_modifying=True)
+    def create_user(self, name: str, email: str, age: int, status: str = "active") -> User: ...
+    
+    @Query("UPDATE user SET name = {name}, age = {age}, updated_at = NOW() WHERE id = {user_id} RETURNING *", is_modifying=True)
+    def update_user(self, user_id: int, name: str, age: int) -> User: ...
+    
+    @Query("UPDATE user SET status = {status}, updated_at = NOW() WHERE id = {user_id}", is_modifying=True)
+    def update_user_status(self, user_id: int, status: str) -> None: ...
+    
+    @Query("DELETE FROM user WHERE id = {user_id}", is_modifying=True)
+    def delete_user(self, user_id: int) -> None: ...
 
 class UserProfileRepository(CrudRepository[int, UserProfile]):
     def find_by_user_id(self, user_id: int) -> Optional[UserProfile]: ...
     def find_all_by_user_ids(self, user_ids: List[int]) -> List[UserProfile]: ...
+    
+    # Modifying operations
+    @Query("INSERT INTO userprofile (user_id, bio, avatar_url) VALUES ({user_id}, {bio}, {avatar_url}) RETURNING *", is_modifying=True)
+    def create_profile(self, user_id: int, bio: str = "", avatar_url: str = "") -> UserProfile: ...
+    
+    @Query("UPDATE userprofile SET bio = {bio}, avatar_url = {avatar_url} WHERE user_id = {user_id} RETURNING *", is_modifying=True)
+    def update_profile(self, user_id: int, bio: str, avatar_url: str) -> UserProfile: ...
 ```
 
-### Service Layer (Read Operations Only)
+### Service Layer (Read and Write Operations)
 
 ```python
 from typing import Optional, List, Dict
@@ -117,18 +135,50 @@ class UserService:
     
     def get_users_by_domain(self, domain: str) -> List[User]:
         return self.user_repository.find_users_by_email_domain(domain)
+    
+    # Write operations
+    def create_user(self, name: str, email: str, age: int, status: str = "active") -> User:
+        return self.user_repository.create_user(name, email, age, status)
+    
+    def update_user(self, user_id: int, name: str, age: int) -> Optional[User]:
+        if not self.user_repository.find_by_id(user_id):
+            return None
+        return self.user_repository.update_user(user_id, name, age)
+    
+    def deactivate_user(self, user_id: int) -> bool:
+        if not self.user_repository.find_by_id(user_id):
+            return False
+        self.user_repository.update_user_status(user_id, "inactive")
+        return True
+    
+    def delete_user(self, user_id: int) -> bool:
+        if not self.user_repository.find_by_id(user_id):
+            return False
+        self.user_repository.delete_user(user_id)
+        return True
+    
+    def create_user_with_profile(self, name: str, email: str, age: int, bio: str = "", avatar_url: str = "") -> Dict:
+        # Create user first
+        user = self.user_repository.create_user(name, email, age)
+        # Create profile
+        profile = self.profile_repository.create_profile(user.id, bio, avatar_url)
+        return {
+            "user": user,
+            "profile": profile
+        }
 ```
 
-### REST Controller (Read Operations Only)
+### REST Controller (Full CRUD Operations)
 
 ```python
-from py_spring_core import RestController, Get, PathVariable
+from py_spring_core import RestController, Get, Post, Put, Delete, PathVariable, RequestBody
 from typing import List, Optional
 
 @RestController("/api/users")
 class UserController:
     user_service: UserService
     
+    # Read operations
     @Get("/")
     def get_all_users(self) -> List[User]:
         return self.user_service.get_active_users()
@@ -148,6 +198,31 @@ class UserController:
     @Get("/statistics")
     def get_statistics(self) -> dict:
         return self.user_service.get_user_statistics()
+    
+    # Write operations
+    @Post("/")
+    def create_user(self, @RequestBody user_data: dict) -> User:
+        return self.user_service.create_user(**user_data)
+    
+    @Post("/{user_id}/profile")
+    def create_user_profile(self, user_id: int, @RequestBody profile_data: dict) -> dict:
+        return self.user_service.create_user_with_profile(
+            user_id=user_id, **profile_data
+        )
+    
+    @Put("/{user_id}")
+    def update_user(self, user_id: int, @RequestBody user_data: dict) -> Optional[User]:
+        return self.user_service.update_user(user_id, **user_data)
+    
+    @Put("/{user_id}/deactivate")
+    def deactivate_user(self, user_id: int) -> dict:
+        success = self.user_service.deactivate_user(user_id)
+        return {"success": success}
+    
+    @Delete("/{user_id}")
+    def delete_user(self, user_id: int) -> dict:
+        success = self.user_service.delete_user(user_id)
+        return {"success": success}
 ```
 
 ## E-commerce System Example
@@ -207,6 +282,16 @@ class ProductRepository(CrudRepository[int, Product]):
     
     @Query("SELECT category, COUNT(*) as count FROM product GROUP BY category")
     def get_product_count_by_category(self) -> List[dict]: ...
+    
+    # Modifying operations
+    @Query("INSERT INTO product (name, description, price, category, stock_quantity) VALUES ({name}, {description}, {price}, {category}, {stock_quantity}) RETURNING *", is_modifying=True)
+    def create_product(self, name: str, description: str, price: Decimal, category: str, stock_quantity: int) -> Product: ...
+    
+    @Query("UPDATE product SET price = {price}, stock_quantity = {stock_quantity} WHERE id = {product_id} RETURNING *", is_modifying=True)
+    def update_product(self, product_id: int, price: Decimal, stock_quantity: int) -> Product: ...
+    
+    @Query("UPDATE product SET is_active = false WHERE id = {product_id}", is_modifying=True)
+    def deactivate_product(self, product_id: int) -> None: ...
 
 class OrderRepository(CrudRepository[int, Order]):
     def find_by_user_id(self, user_id: int) -> List[Order]: ...
@@ -218,13 +303,24 @@ class OrderRepository(CrudRepository[int, Order]):
     
     @Query("SELECT SUM(total_amount) as total FROM `order` WHERE status = {status}")
     def get_total_amount_by_status(self, status: str) -> Decimal: ...
+    
+    # Modifying operations
+    @Query("INSERT INTO `order` (user_id, total_amount, status) VALUES ({user_id}, {total_amount}, {status}) RETURNING *", is_modifying=True)
+    def create_order(self, user_id: int, total_amount: Decimal, status: str = "pending") -> Order: ...
+    
+    @Query("UPDATE `order` SET status = {status}, updated_at = NOW() WHERE id = {order_id} RETURNING *", is_modifying=True)
+    def update_order_status(self, order_id: int, status: str) -> Order: ...
 
 class OrderItemRepository(CrudRepository[int, OrderItem]):
     def find_by_order_id(self, order_id: int) -> List[OrderItem]: ...
     def find_by_product_id(self, product_id: int) -> List[OrderItem]: ...
+    
+    # Modifying operations
+    @Query("INSERT INTO orderitem (order_id, product_id, quantity, unit_price, total_price) VALUES ({order_id}, {product_id}, {quantity}, {unit_price}, {total_price}) RETURNING *", is_modifying=True)
+    def create_order_item(self, order_id: int, product_id: int, quantity: int, unit_price: Decimal, total_price: Decimal) -> OrderItem: ...
 ```
 
-### Service Layer (Read Operations Only)
+### Service Layer (E-commerce Operations)
 
 ```python
 from decimal import Decimal
@@ -315,8 +411,9 @@ if __name__ == "__main__":
 
 ## Important Notes
 
-- **Read-Only Operations**: All examples focus on data retrieval and querying
-- **No Data Modification**: PySpringModel does not support creating, updating, or deleting data
-- **SQLAlchemy for Writes**: For write operations, use SQLAlchemy directly
-- **Future Enhancements**: Write operations are planned for future releases
-- **Data Integrity**: Since only read operations are supported, data integrity is maintained 
+- **Full CRUD Support**: PySpringModel now supports both read and write operations
+- **Transaction Control**: Use `is_modifying=True` for INSERT, UPDATE, DELETE operations
+- **Commit Management**: Fine-grained control over when database changes are committed
+- **Batch Operations**: Manual transaction control for efficient bulk operations
+- **Data Integrity**: Proper transaction handling ensures data consistency
+- **Backward Compatibility**: All existing read operations continue to work unchanged 

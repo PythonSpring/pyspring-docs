@@ -144,9 +144,52 @@ class UserRepository(CrudRepository[int, User]):
     def find_users_complex_criteria(self, min_age: int, max_age: int, status: str, alt_status: str) -> List[User]: ...
 ```
 
+## Modifying Operations with Commit Control
+
+For operations that modify data (INSERT, UPDATE, DELETE), use the `is_modifying` parameter to control transaction commits:
+
+### INSERT Operations
+
+```python
+class UserRepository(CrudRepository[int, User]):
+    @Query("INSERT INTO user (name, email, age) VALUES ({name}, {email}, {age}) RETURNING *", is_modifying=True)
+    def create_user(self, name: str, email: str, age: int) -> User: ...
+    
+    @Query("INSERT INTO user (name, email, age) VALUES ({name}, {email}, {age})", is_modifying=False)
+    def create_user_no_commit(self, name: str, email: str, age: int) -> User: ...
+```
+
+### UPDATE Operations
+
+```python
+class UserRepository(CrudRepository[int, User]):
+    @Query("UPDATE user SET name = {name}, age = {age} WHERE email = {email} RETURNING *", is_modifying=True)
+    def update_user(self, name: str, email: str, age: int) -> User: ...
+    
+    @Query("UPDATE user SET age = age + {increment} WHERE age > {min_age}", is_modifying=True)
+    def bulk_update_ages(self, increment: int, min_age: int) -> None: ...
+```
+
+### DELETE Operations
+
+```python
+class UserRepository(CrudRepository[int, User]):
+    @Query("DELETE FROM user WHERE id = {user_id}", is_modifying=True)
+    def delete_user(self, user_id: int) -> None: ...
+    
+    @Query("DELETE FROM user WHERE status = {status} AND age < {max_age}", is_modifying=True)
+    def delete_users_by_criteria(self, status: str, max_age: int) -> None: ...
+```
+
 ## Query Decorator Features
 
 The `@Query` decorator provides several features:
+
+### Commit Control
+
+- **is_modifying=True**: Automatically commits changes (for INSERT, UPDATE, DELETE)
+- **is_modifying=False**: No automatic commit (default behavior, suitable for SELECT)
+- Fine-grained transaction control for complex operations
 
 ### Type Safety
 
@@ -221,6 +264,36 @@ class UserRepository(CrudRepository[int, User]):
     
     @Query("SELECT * FROM user WHERE age >= {min_age} OR age IS NULL")
     def find_users_by_min_age(self, min_age: int) -> List[User]: ...
+```
+
+### 5. Use Appropriate is_modifying Settings
+
+```python
+# Good - Read operations with is_modifying=False (default)
+@Query("SELECT * FROM user WHERE email = {email}")
+def find_by_email(self, email: str) -> Optional[User]: ...
+
+# Good - Write operations with is_modifying=True
+@Query("INSERT INTO user (name, email) VALUES ({name}, {email})", is_modifying=True)
+def create_user(self, name: str, email: str) -> User: ...
+
+# Avoid - Write operations without explicit is_modifying
+@Query("DELETE FROM user WHERE id = {user_id}")  # Should specify is_modifying=True
+def delete_user(self, user_id: int) -> None: ...
+```
+
+### 6. Batch Operations with Transaction Control
+
+```python
+class UserRepository(CrudRepository[int, User]):
+    @Query("INSERT INTO user (name, email, age) VALUES ({name}, {email}, {age})", is_modifying=False)
+    def insert_user_batch_item(self, name: str, email: str, age: int) -> None: ...
+    
+    def create_users_batch(self, users: List[dict]) -> None:
+        """Create multiple users in a single transaction"""
+        with PySpringModel.create_managed_session(should_commit=True) as session:
+            for user_data in users:
+                self.insert_user_batch_item(**user_data)
 ```
 
 ## Limitations

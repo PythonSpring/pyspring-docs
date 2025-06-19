@@ -11,15 +11,13 @@ PySpringModel is a Python module built on top of PySpring that provides a simple
 - **Custom SQL Queries**: PySpringModel supports custom SQL queries using the `@Query` decorator for complex database operations.
 - **RESTful API Integration**: PySpringModel integrates with the PySpring framework to automatically generate basic table CRUD APIs for your SQLModel entities.
 
-## Limitations
+## Transaction Management
 
-**Important**: PySpringModel currently only supports **read operations** (queries). The following features are not yet supported:
+PySpringModel provides fine-grained control over database transactions through the `is_modifying` parameter in custom queries. This allows you to specify whether a query operation should automatically commit changes to the database:
 
-- **Model Editing**: You cannot modify model instances directly through PySpringModel
-- **Write Operations**: Create, Update, and Delete operations are not implemented
-- **Data Mutations**: Any operations that would change the database state are not supported
-
-PySpringModel is designed primarily for querying and reading data from your database. For write operations, you'll need to use SQLAlchemy directly or implement custom solutions.
+- **Read Operations**: Default behavior with `is_modifying=False` (no automatic commit)
+- **Modifying Operations**: Set `is_modifying=True` for INSERT, UPDATE, DELETE operations that should commit
+- **Session Control**: Explicit control over when database changes are persisted
 
 ## Installation
 
@@ -73,6 +71,16 @@ class UserRepository(CrudRepository[int, User]):
     
     @Query("SELECT * FROM user WHERE age BETWEEN {min_age} AND {max_age}")
     def find_users_by_age_range(self, min_age: int, max_age: int) -> List[User]: ...
+    
+    # Modifying operations with commit control
+    @Query("INSERT INTO user (name, email, age) VALUES ({name}, {email}, {age}) RETURNING *", is_modifying=True)
+    def create_user(self, name: str, email: str, age: int) -> User: ...
+    
+    @Query("UPDATE user SET name = {name}, age = {age} WHERE email = {email} RETURNING *", is_modifying=True)
+    def update_user(self, name: str, email: str, age: int) -> User: ...
+    
+    @Query("DELETE FROM user WHERE id = {user_id}", is_modifying=True)
+    def delete_user(self, user_id: int) -> None: ...
 ```
 
 ### 3. Use in Your Application
@@ -108,6 +116,7 @@ PySpringApplication(
 
 - Learn about [Dynamic Query Generation](dynamic-queries.md)
 - Explore [Custom SQL Queries](custom-queries.md)
+- Master [Modifiable Queries with Commit Control](modifiable-queries.md)
 - Understand [Built-in CRUD Operations](crud-operations.md)
 - See [Complete Examples](examples.md)
 - Dive into the [SQL Statement Generation Algorithm](sql-statement-algorithm.md) 
