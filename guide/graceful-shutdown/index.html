@@ -1319,13 +1319,23 @@
 </span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error during shutdown: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>        <span class="c1"># Implement emergency cleanup if needed</span>
 </span></code></pre></div>
-<p>The framework will:
-1. Automatically discover your <code>GracefulShutdownHandler</code> implementation
-2. Register it as the shutdown handler
-3. Call appropriate methods based on shutdown triggers:
-   - <code>on_shutdown()</code> when SIGINT or SIGTERM is received
-   - <code>on_timeout()</code> if shutdown process times out
-   - <code>on_error()</code> if any errors occur during shutdown</p>
+<p>The framework will:</p>
+<ol>
+<li>
+<p>Automatically discover your <code>GracefulShutdownHandler</code> implementation</p>
+</li>
+<li>
+<p>Register it as the shutdown handler</p>
+</li>
+<li>
+<p>Call appropriate methods based on shutdown triggers:</p>
+<ul>
+<li><code>on_shutdown()</code> when SIGINT or SIGTERM is received</li>
+<li><code>on_timeout()</code> if shutdown process times out</li>
+<li><code>on_error()</code> if any errors occur during shutdown</li>
+</ul>
+</li>
+</ol>
 <h2 id="shutdown-types">Shutdown Types</h2>
 <p>PySpring defines several shutdown types through the <code>ShutdownType</code> enum:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ShutdownType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
