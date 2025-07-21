@@ -1424,10 +1424,18 @@
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            <span class="n">CORSMiddleware</span>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="p">]</span>
 </span></code></pre></div>
-<p>The framework will:
-1. Automatically discover your <code>MiddlewareRegistry</code> implementation
-2. Register all middlewares in the order specified
-3. Inject any required dependencies into your middlewares</p>
+<p>The framework will:</p>
+<ol>
+<li>
+<p>Automatically discover your <code>MiddlewareRegistry</code> implementation</p>
+</li>
+<li>
+<p>Register all middlewares in the order specified</p>
+</li>
+<li>
+<p>Inject any required dependencies into your middlewares</p>
+</li>
+</ol>
 <h2 id="execution-order">Execution Order</h2>
 <p>Middlewares follow a Last-In-First-Out (LIFO) execution order:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># If get_middleware_classes() returns: [MiddlewareA, MiddlewareB]</span>
