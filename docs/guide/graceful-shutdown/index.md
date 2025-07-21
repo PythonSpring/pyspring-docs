@@ -55,12 +55,15 @@ class AppShutdownHandler(GracefulShutdownHandler):
 ```
 
 The framework will:
+
 1. Automatically discover your `GracefulShutdownHandler` implementation
+
 2. Register it as the shutdown handler
+
 3. Call appropriate methods based on shutdown triggers:
-   - `on_shutdown()` when SIGINT or SIGTERM is received
-   - `on_timeout()` if shutdown process times out
-   - `on_error()` if any errors occur during shutdown
+    - `on_shutdown()` when SIGINT or SIGTERM is received
+    - `on_timeout()` if shutdown process times out
+    - `on_error()` if any errors occur during shutdown
 
 ## Shutdown Types
 
