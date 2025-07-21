@@ -125,6 +125,3 @@ class UserController(RestController):
 - Each route is registered with its HTTP method, path, and handler function
 - Route registration happens during application initialization
 - Decorators preserve function metadata for better introspection
-
-### Defining Middlewares
-Override `register_middlewares()`
