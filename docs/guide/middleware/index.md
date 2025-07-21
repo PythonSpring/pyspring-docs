@@ -67,8 +67,11 @@ class AppMiddlewareRegistry(MiddlewareRegistry):
 ```
 
 The framework will:
+
 1. Automatically discover your `MiddlewareRegistry` implementation
+
 2. Register all middlewares in the order specified
+
 3. Inject any required dependencies into your middlewares
 
 ## Execution Order
