@@ -41,6 +41,10 @@ nav:
           - Auto Dependency Injection: guide/dependency-injection/auto-deppendency-injection.md
       - Event System:
           - Intro to Event System: guide/event-system/index.md
+      - Middleware:
+          - Middleware System: guide/middleware/index.md
+      - Graceful Shutdown:
+          - Graceful Shutdown: guide/graceful-shutdown/index.md
       - Scheduling:
           - Scheduler: guide/scheduling/scheduler.md
       - PySpringModel:
