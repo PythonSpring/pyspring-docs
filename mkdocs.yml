@@ -1,6 +1,5 @@
 site_name: PySpring
 site_description: PySpring framework, Spring Boot-inspired, type-safe dependency injection, ready for production
-site_url: https://pyspring.dev/
 repo_name: PythonSpring/pyspring-core
 repo_url: https://github.com/PythonSpring/pyspring-core
 edit_uri: ""

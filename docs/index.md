@@ -16,8 +16,6 @@
 
 ---
 
-**Documentation**: <a href="https://pyspring.dev" target="_blank">https://pyspring.dev</a>
-
 **Source Code**: <a href="https://github.com/PythonSpring/pyspring-core" target="_blank">https://github.com/PythonSpring/pyspring-core</a>
 
 ---
