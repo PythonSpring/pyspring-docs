@@ -1,80 +1,144 @@
-# **PySpring** Framework
+<style>
+.md-content .md-typeset h1 { display: none; }
+</style>
 
+<p align="center">
+    <em>PySpring — Spring Boot-inspired Python framework with type-safe dependency injection, ready for production.</em>
+</p>
+<p align="center">
+<a href="https://pypi.org/project/py-spring-core" target="_blank">
+    <img src="https://img.shields.io/pypi/v/py-spring-core?color=%2334D058&label=pypi%20package" alt="Package version">
+</a>
+<a href="https://pypi.org/project/py-spring-core" target="_blank">
+    <img src="https://img.shields.io/pypi/pyversions/py-spring-core.svg?color=%2334D058" alt="Supported Python versions">
+</a>
+</p>
 
-### Overview
+---
 
-**PySpring** is a Python web framework inspired by **Spring Boot**. It provides a structured approach to building scalable web applications with key features like:
+**Documentation**: <a href="https://pyspring.dev" target="_blank">https://pyspring.dev</a>
 
-- **Auto Dependency Injection**
-- **Auto Configuration Management**
-- **ASGI Web Server** for hosting your application
+**Source Code**: <a href="https://github.com/PythonSpring/pyspring-core" target="_blank">https://github.com/PythonSpring/pyspring-core</a>
 
-### Technologies Used in PySpring
+---
 
-- **FastAPI**: For the web server layer.
-- **Pydantic**: For data validation.
+PySpring is a Python web framework inspired by **Spring Boot**. It gives you a structured, type-safe approach to building scalable web applications — with automatic dependency injection, configuration management, and an ASGI web server built on FastAPI.
 
-**PySpring** combines these technologies to deliver a seamless development experience for building modern, scalable applications.
-### Key Features
+The key features are:
 
-- **Application Initialization**: **PySpringApplication** class serves as the main entry point for the **PySpring** application. It initializes the application from a configuration file, scans the application source directory for Python files, and groups them into class files and model files
+* **Type-safe**: Dependency injection resolved entirely from Python type hints. No decorators, no magic strings — your editor knows everything. 🚀
+* **Spring Boot-inspired**: Familiar patterns — Components, Properties, Controllers, Bean Collections — for developers who appreciate structured architecture.
+* **Built on FastAPI**: Automatic OpenAPI docs, high performance, and async support out of the box.
+* **Auto configuration**: Load and validate configuration from JSON/YAML using Pydantic models.
+* **Lifecycle management**: `post_construct` and `pre_destroy` hooks for clean resource management.
+* **Event-driven**: Built-in thread-safe event system with typed Pydantic events.
 
-- **Application Context Management**: **PySpring** manages the application context and dependency injection. It registers application entities such as components, controllers, bean collections, and properties. It also initializes the application context and injects dependencies.
+## Requirements
 
-- **REST Controllers**: **PySpring** supports RESTful API development using the RestController class. It allows you to define routes, handle HTTP requests, and register middlewares easily.
+Python 3.10+
 
-- **Component-based Architecture**: **PySpring** encourages a component-based architecture, where components are reusable and modular building blocks of the application. Components can have their own lifecycle and can be registered and managed by the application context.
+PySpring builds on top of:
 
-- **Properties Management**: Properties classes provide a convenient way to manage application-specific configurations. **PySpring** supports loading properties from a properties file and injecting them into components.
+* <a href="https://fastapi.tiangolo.com/" target="_blank">FastAPI</a> — for the web server layer.
+* <a href="https://docs.pydantic.dev/" target="_blank">Pydantic</a> — for data validation and configuration.
 
-- **Framework Modules**: **PySpring** allows the integration of additional framework modules to extend the functionality of the application. Modules can provide additional routes, middlewares, or any other custom functionality required by the application.
+## Installation
 
-- **Builtin FastAPI Integration**: **PySpring** integrates with `FastAPI`, a modern, fast (high-performance), web framework for building APIs with Python. It leverages FastAPI's features for routing, request handling, and server configuration.
+<div class="termy">
 
-- **OpenAPI Generation**: Since **PySpring** leverages `FastAPI`, it automatically generates [OpenAPI](https://fastapi.tiangolo.com/features/#based-on-open-standards) documentation for the application. The API routes, endpoints, and data models are used to create interactive, self-updating OpenAPI documentation, which can be easily accessed via FastAPI's built-in web interface.
+```console
+$ pip install py-spring-core
 
-- **Type-Safety**: The framework is type-safe when used properly. All dependency injection (DI) is determined based on Python type hints, ensuring that dependencies are injected in a consistent and reliable manner. This feature enables better development practices by reducing runtime errors and improving code clarity.
-
-- **Qualifier Support**: PySpring supports qualifiers for dependency injection, allowing you to specify which implementation to inject when multiple implementations of the same interface exist. This is achieved using Python's `Annotated` type hints, making it easy to manage complex dependency scenarios.
-
-- **Component Registration Validation**: The framework includes robust validation to prevent duplicate component registration and provides clear error messages for developers. This ensures that your application maintains a clean and consistent component structure.
-
-- **Decorator-Based Route Mapping**: PySpring now supports a more declarative approach to route definition using decorators, similar to Spring's annotation-based routing. This provides a cleaner and more type-safe way to define API endpoints with better IDE support and code organization.
-
-- **Event System**: PySpring provides a powerful event system that enables event-driven architecture in your applications. It features thread-safe event publishing, decorator-based event listeners, and asynchronous event processing. The system is fully integrated with the component system and provides type-safe events using Pydantic models.
-
-### Getting Started
-To get started with **PySpring**, follow these steps:
-
-1. Install the **PySpring** framework by running:
-
-```bash
-pip3 install py-spring-core
+---> 100%
 ```
 
-2. Create a new Python project and navigate to its directory
+</div>
 
--  Implement your application properties, components, controllers, using **PySpring** conventions inside declared source code folder (whcih can be modified the key `app_src_target_dir` inside app-config.json), this controls what folder will be scanned by the framework.
+## Example
 
-- Instantiate a `PySpringApplication` object in your main script, passing the path to your application configuration file.
+### Create it
 
-- Optionally, define and enable any framework modules you want to use.
+Create a file `main.py` with:
 
-- Run the application by calling the `run()` method on the `PySpringApplication` object, as shown in the example code below:
-
-```py
+```python
 from py_spring_core import PySpringApplication
+
 
 def main():
     app = PySpringApplication("./app-config.json")
     app.run()
 
+
 if __name__ == "__main__":
     main()
 ```
 
-- For example project, please refer to this [github repo](https://github.com/NFUChen/PySpring-Example-Project).
+Now create a component with dependency injection in `services.py`:
 
-# Contributing
+```python
+from py_spring_core import Component, Properties
 
-Contributions to **PySpring** are welcome! If you find any issues or have suggestions for improvements, please submit a pull request or open an issue on GitHub.
+
+class DatabaseProperties(Properties):
+    __key__ = "database"
+    host: str
+    port: int
+    name: str
+
+
+class DatabaseService(Component):
+    database_properties: DatabaseProperties  # Auto-injected!
+
+    def post_construct(self):
+        print(f"Connected to {self.database_properties.host}")
+```
+
+And a REST controller in `controllers.py`:
+
+```python
+from py_spring_core import RestController
+from py_spring_core.core.entities.controllers.rest_controller import GetMapping
+
+
+class UserController(RestController):
+    class Config:
+        prefix = "/api/users"
+
+    database_service: DatabaseService  # Auto-injected!
+
+    @GetMapping("/")
+    def get_users(self):
+        return {"users": []}
+```
+
+That's the entire application. You declared types — PySpring resolved and injected everything.
+
+### Run it
+
+```console
+$ python main.py
+```
+
+### Check it
+
+Open your browser at <a href="http://127.0.0.1:8000/docs" target="_blank">http://127.0.0.1:8000/docs</a>.
+
+You get **automatic interactive API documentation** (Swagger UI) with your routes already defined — because PySpring builds on FastAPI. ✨
+
+You also get **ReDoc** at `/redoc`.
+
+## Recap
+
+In that small example, you:
+
+* **Declared dependencies** using type hints — PySpring resolved and injected them.
+* **Defined configuration** as a Pydantic model — loaded and validated automatically.
+* **Built a REST API** using decorators — with automatic OpenAPI docs.
+
+All with **type safety**, **editor support**, and **minimal boilerplate**.
+
+To learn everything step by step, head to the <a href="tutorial/" target="_blank">Tutorial - User Guide</a>.
+
+## License
+
+This project is licensed under the terms of the MIT license.

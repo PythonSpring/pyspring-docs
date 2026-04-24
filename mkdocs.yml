@@ -1,67 +1,125 @@
 site_name: PySpring
-site_url: https://mydomain.org/mysite
-# Add the GitHub repository details
+site_description: PySpring framework, Spring Boot-inspired, type-safe dependency injection, ready for production
+site_url: https://pyspring.dev/
+repo_name: PythonSpring/pyspring-core
 repo_url: https://github.com/PythonSpring/pyspring-core
-repo_name: pyspring-core
+edit_uri: ""
 
 theme:
   name: material
-  features:
-    - content.code.copy
-    - navigation.expand
   palette:
-    # Dark Mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
       toggle:
-        icon: material/weather-sunny
-        name: Dark mode
-      primary: green
-      accent: deep purple
-
-    # Light Mode
-    - scheme: default
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
       toggle:
-        icon: material/weather-night
-        name: Light mode
-      primary: blue
-      accent: deep orange
+        icon: material/lightbulb
+        name: Switch to dark mode
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github-alt
+  language: en
 
-    
+plugins:
+  - search
+  - social
 
 nav:
-  - Overview: index.md
-  - Guide:
-      - Entityies In Framework:
-          - Component: guide/entities-in-framework/component.md
-          - Properties: guide/entities-in-framework/properties.md
-          - REST Controller: guide/entities-in-framework/rest-controller.md
-          - Bean Collection:  guide/entities-in-framework/bean-collection.md
-      - Dependency Injection:
-          - What is Dependency Injection: guide/dependency-injection/what-is-denpendency-injection.md
-          - Auto Dependency Injection: guide/dependency-injection/auto-deppendency-injection.md
-      - Event System:
-          - Intro to Event System: guide/event-system/index.md
-      - Middleware:
-          - Middleware System: guide/middleware/index.md
-      - Graceful Shutdown:
-          - Graceful Shutdown: guide/graceful-shutdown/index.md
-      - Scheduling:
-          - Scheduler: guide/scheduling/scheduler.md
-      - PySpringModel:
-          - Overview: guide/pyspring-model/index.md
-          - Dynamic Queries: guide/pyspring-model/dynamic-queries.md
-          - Custom SQL Queries: guide/pyspring-model/custom-queries.md
-          - CRUD Operations: guide/pyspring-model/crud-operations.md
-          - Skip Auto Implementation: guide/pyspring-model/skip-auto-implementation.md
-          - Complete Examples: guide/pyspring-model/examples.md
-          - Deep Dive on SQL statement generation: guide/pyspring-model/sql-statement-algorithm.md
-     
-      
+  - PySpring: index.md
+  - Features: features.md
+  - Learn:
+    - learn/index.md
+    - Tutorial - User Guide:
+      - tutorial/index.md
+      - First Steps: tutorial/first-steps.md
+      - Components: tutorial/components.md
+      - Properties: tutorial/properties.md
+      - Dependency Injection: tutorial/dependency-injection.md
+      - REST Controllers: tutorial/rest-controllers.md
+      - Bean Collections: tutorial/bean-collections.md
+      - Event System: tutorial/event-system.md
+      - Middleware: tutorial/middleware.md
+      - Scheduling: tutorial/scheduling.md
+      - Graceful Shutdown: tutorial/graceful-shutdown.md
+    - Advanced User Guide:
+      - advanced/index.md
+      - Qualifier Support: advanced/qualifier-support.md
+      - Component Lifecycle: advanced/component-lifecycle.md
+  - Reference:
+    - reference/index.md
+  - About:
+    - about/index.md
+
 markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format ''
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/PythonSpring/pyspring-core
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/py-spring-core/
+
+extra_css:
+  - css/custom.css
