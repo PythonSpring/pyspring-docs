@@ -1,79 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://mydomain.org/mysite/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/dependency-injection/auto-deppendency-injection/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/features/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/dependency-injection/what-is-denpendency-injection/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/about/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/entities-in-framework/bean-collection/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/advanced/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/entities-in-framework/component/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/advanced/component-lifecycle/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/entities-in-framework/properties/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/advanced/qualifier-support/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/entities-in-framework/rest-controller/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/learn/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/event-system/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/reference/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/graceful-shutdown/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/tutorial/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/middleware/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/tutorial/bean-collections/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/pyspring-model/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/tutorial/components/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/pyspring-model/crud-operations/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/tutorial/dependency-injection/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/pyspring-model/custom-queries/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/tutorial/event-system/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/pyspring-model/dynamic-queries/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/tutorial/first-steps/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/pyspring-model/examples/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/tutorial/graceful-shutdown/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/pyspring-model/modifiable-queries/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/tutorial/properties/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/pyspring-model/skip-auto-implementation/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/tutorial/rest-controllers/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/guide/pyspring-model/sql-statement-algorithm/</loc>
-         <lastmod>2025-07-21</lastmod>
-    </url>
-    <url>
-         <loc>https://mydomain.org/mysite/guide/scheduling/scheduler/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://pyspring.dev/tutorial/scheduling/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
 </urlset>

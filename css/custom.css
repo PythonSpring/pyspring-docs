@@ -1,0 +1,37 @@
+.md-typeset h1 {
+    font-weight: 700;
+}
+
+.md-typeset code {
+    font-size: 0.85em;
+}
+
+/* Code block improvements */
+.md-typeset pre > code {
+    font-size: 0.82em;
+}
+
+/* Navigation tab styling */
+.md-tabs {
+    font-weight: 500;
+}
+
+/* Better admonition styling */
+.md-typeset .admonition,
+.md-typeset details {
+    font-size: 0.9rem;
+}
+
+/* Landing page hero area */
+.md-content .md-typeset p:first-of-type {
+    font-size: 1.2em;
+}
+
+/* Consistent link styling */
+.md-typeset a {
+    text-decoration: none;
+}
+
+.md-typeset a:hover {
+    text-decoration: underline;
+}
