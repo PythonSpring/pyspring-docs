@@ -86,6 +86,6 @@ Graceful shutdown gives you clean application termination.
 * `ShutdownType` tells you what triggered the shutdown
 * Full dependency injection is available
 
-That's the end of the Tutorial. You now know all the core features of PySpring! 🎉
+Next, learn about **Skills** — how to integrate PySpring with Claude Code for accelerated development.
 
 For more advanced topics, check out the **Advanced User Guide** for qualifier support and component lifecycle management.

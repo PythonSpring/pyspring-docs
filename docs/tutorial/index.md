@@ -28,5 +28,6 @@ The tutorial covers:
 * **Middleware** — request/response processing
 * **Scheduling** — running tasks on a schedule
 * **Graceful Shutdown** — clean application shutdown
+* **Skills** — Claude Code integration for accelerated development
 
 Let's get started with <a href="first-steps/">First Steps</a>. 🚀
