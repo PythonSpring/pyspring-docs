@@ -7,22 +7,22 @@ PySpring's scheduler is built on APScheduler and fully integrated with the compo
 ## Install the scheduler
 
 ```console
-$ pip install git+ssh://git@github.com/PythonSpring/pyspring-scheduler.git
+$ pip install git+https://github.com/PythonSpring/pyspring-scheduler.git
 ```
 
 ## Set up the scheduler
 
-Register the scheduler as an entity provider in your application entry point:
+Register `PySpringSchedulerStarter` in your application entry point:
 
 ```python
 from py_spring_core import PySpringApplication
-from pyspring_scheduler import provide_scheduler
+from py_spring_scheduler import PySpringSchedulerStarter
 
 
 def main():
     app = PySpringApplication(
         "./app-config.json",
-        entity_providers=[provide_scheduler()],
+        starters=[PySpringSchedulerStarter()],
     )
     app.run()
 
@@ -137,7 +137,7 @@ Add scheduler configuration to your properties file:
 
 The scheduler lets you run tasks on a schedule with full DI support.
 
-* Install `pyspring-scheduler` and register with `provide_scheduler()`
+* Install `pyspring-scheduler` and register with `PySpringSchedulerStarter()`
 * Use `@Scheduled(trigger=...)` on component methods
 * Supports interval, cron, and combined triggers
 * Full dependency injection in scheduled tasks

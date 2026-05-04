@@ -77,6 +77,19 @@ class UserCreatedEvent(ApplicationEvent):
 
 Publish from one component, handle in another. No imports between them.
 
+## Starters
+
+Package reusable functionality into self-contained modules. A starter bundles components, properties, controllers, and beans into a single unit that plugs into any PySpring application.
+
+```python
+class CacheStarter(PySpringStarter):
+    def on_configure(self):
+        self.component_classes.append(CacheService)
+        self.properties_classes.append(CacheProperties)
+```
+
+Publish starters as pip packages with entry point auto-discovery — users just `pip install` and it works.
+
 ## Graceful shutdown
 
 Handle SIGINT and SIGTERM cleanly. Close database connections, flush queues, finish in-flight requests — all with clear lifecycle hooks.
@@ -84,3 +97,35 @@ Handle SIGINT and SIGTERM cleanly. Close database connections, flush queues, fin
 ## Scheduling
 
 Built-in support for scheduled tasks with cron expressions, intervals, and complex trigger combinations — powered by APScheduler and fully integrated with dependency injection.
+
+See the [Scheduler module docs](modules/scheduler/) for the full reference.
+
+## ORM and data access
+
+[PySpring Model](modules/model/) brings Spring Data JPA-style repository patterns to Python:
+
+```python
+class UserRepository(CrudRepository[int, User]):
+    def find_by_name(self, name: str) -> Optional[User]: ...
+    def find_all_by_status_in(self, status: List[str]) -> List[User]: ...
+    def find_by_age_gt_and_status(self, age: int, status: str) -> Optional[User]: ...
+```
+
+Declare method signatures — PySpring generates the SQL automatically. Built on SQLModel and SQLAlchemy.
+
+## Transaction management
+
+Declarative transactions with 7 propagation types, modeled after Spring's `@Transactional`:
+
+```python
+from py_spring_model import Transactional, Propagation
+
+@Transactional(propagation=Propagation.REQUIRES_NEW)
+def write_audit_log(self, message: str) -> None:
+    # Always runs in a new, independent transaction
+    ...
+```
+
+Supports REQUIRED, REQUIRES_NEW, SUPPORTS, MANDATORY, NOT_SUPPORTED, NEVER, and NESTED propagation.
+
+See the [Model module docs](modules/model/) for the full reference.

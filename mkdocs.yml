@@ -1,7 +1,7 @@
 site_name: PySpring
-site_description: PySpring framework, Spring Boot-inspired, type-safe dependency injection, ready for production
-repo_name: PythonSpring/pyspring-core
-repo_url: https://github.com/PythonSpring/pyspring-core
+site_description: PySpring framework — Spring Boot-inspired Python ecosystem with type-safe dependency injection, ORM, scheduling, and more.
+repo_name: PythonSpring
+repo_url: https://github.com/PythonSpring
 edit_uri: ""
 
 theme:
@@ -65,10 +65,27 @@ nav:
       - Middleware: tutorial/middleware.md
       - Scheduling: tutorial/scheduling.md
       - Graceful Shutdown: tutorial/graceful-shutdown.md
+      - Skills — Claude Code Integration: tutorial/skills.md
     - Advanced User Guide:
       - advanced/index.md
       - Qualifier Support: advanced/qualifier-support.md
       - Component Lifecycle: advanced/component-lifecycle.md
+      - Starters: advanced/starters.md
+  - Modules:
+    - PySpring Model:
+      - modules/model/index.md
+      - Getting Started: modules/model/getting-started.md
+      - CRUD Repository: modules/model/crud-repository.md
+      - Dynamic Queries: modules/model/dynamic-queries.md
+      - Field Operations: modules/model/field-operations.md
+      - Custom Queries: modules/model/custom-queries.md
+      - Transaction Management: modules/model/transactions.md
+      - Session Management: modules/model/sessions.md
+    - PySpring Scheduler:
+      - modules/scheduler/index.md
+      - Getting Started: modules/scheduler/getting-started.md
+      - Triggers: modules/scheduler/triggers.md
+      - Configuration: modules/scheduler/configuration.md
   - Reference:
     - reference/index.md
   - About:
@@ -116,7 +133,7 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/PythonSpring/pyspring-core
+      link: https://github.com/PythonSpring
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/py-spring-core/
 

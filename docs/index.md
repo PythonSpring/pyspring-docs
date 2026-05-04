@@ -3,7 +3,7 @@
 </style>
 
 <p align="center">
-    <em>PySpring — Spring Boot-inspired Python framework with type-safe dependency injection, ready for production.</em>
+    <em>PySpring — Spring Boot-inspired Python framework ecosystem with type-safe dependency injection, ORM, scheduling, and more.</em>
 </p>
 <p align="center">
 <a href="https://pypi.org/project/py-spring-core" target="_blank">
@@ -16,20 +16,34 @@
 
 ---
 
-**Source Code**: <a href="https://github.com/PythonSpring/pyspring-core" target="_blank">https://github.com/PythonSpring/pyspring-core</a>
+**GitHub**: <a href="https://github.com/PythonSpring" target="_blank">https://github.com/PythonSpring</a>
 
 ---
 
 PySpring is a Python web framework inspired by **Spring Boot**. It gives you a structured, type-safe approach to building scalable web applications — with automatic dependency injection, configuration management, and an ASGI web server built on FastAPI.
 
-The key features are:
+## The ecosystem
 
-* **Type-safe**: Dependency injection resolved entirely from Python type hints. No decorators, no magic strings — your editor knows everything. 🚀
+PySpring is a family of modules that work together:
+
+| Package | Description |
+|---------|-------------|
+| **[py-spring-core](tutorial/)** | The foundation — DI, components, controllers, properties, events, middleware |
+| **[pyspring-model](modules/model/)** | ORM and data access — CRUD repositories, dynamic queries, transactions |
+| **[pyspring-scheduler](modules/scheduler/)** | Background scheduling — interval, cron, and combined triggers with DI |
+
+Each module is installed separately and integrated via the [Starters](advanced/starters.md) pattern.
+
+## Core features
+
+* **Type-safe**: Dependency injection resolved entirely from Python type hints. No decorators, no magic strings — your editor knows everything.
 * **Spring Boot-inspired**: Familiar patterns — Components, Properties, Controllers, Bean Collections — for developers who appreciate structured architecture.
 * **Built on FastAPI**: Automatic OpenAPI docs, high performance, and async support out of the box.
 * **Auto configuration**: Load and validate configuration from JSON/YAML using Pydantic models.
 * **Lifecycle management**: `post_construct` and `pre_destroy` hooks for clean resource management.
 * **Event-driven**: Built-in thread-safe event system with typed Pydantic events.
+* **ORM with dynamic queries**: Spring Data JPA-style repositories with auto-implemented query methods and `@Transactional` support.
+* **Background scheduling**: Cron, interval, and combined triggers with full DI integration.
 
 ## Requirements
 
