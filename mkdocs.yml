@@ -81,6 +81,7 @@ nav:
       - Relationship Queries: modules/model/relationship-queries.md
       - Custom Queries: modules/model/custom-queries.md
       - Transaction Management: modules/model/transactions.md
+      - Auto CRUD Routes: modules/model/auto-crud-routes.md
       - Session Management: modules/model/sessions.md
     - PySpring Scheduler:
       - modules/scheduler/index.md

@@ -153,4 +153,5 @@ Now that you have a working setup:
 - Explore **[dynamic query methods](dynamic-queries.md)** for complex lookups
 - Use **[field operations](field-operations.md)** for comparisons and pattern matching
 - Write raw SQL with **[custom queries](custom-queries.md)**
+- Auto-generate REST APIs with **[Auto CRUD Routes](auto-crud-routes.md)**
 - Manage transactions with **[@Transactional](transactions.md)**

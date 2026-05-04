@@ -54,5 +54,6 @@ graph TD
 - **[Field Operations](field-operations.md)** — Comparison, membership, range, null-check, and pattern-matching operators.
 - **[Relationship Queries](relationship-queries.md)** — Query across relationships with automatic join generation.
 - **[Custom Queries](custom-queries.md)** — Raw SQL with the `@Query` decorator.
+- **[Auto CRUD Routes](auto-crud-routes.md)** — Automatically expose RESTful CRUD endpoints for all models.
 - **[Transaction Management](transactions.md)** — `@Transactional` and propagation types.
 - **[Session Management](sessions.md)** — How sessions are managed per request and per context.
