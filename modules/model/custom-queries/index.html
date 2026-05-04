@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../field-operations/">
+        <link rel="prev" href="../relationship-queries/">
       
       
         <link rel="next" href="../transactions/">
@@ -1205,6 +1205,8 @@
       
         
       
+        
+      
     
     
     
@@ -1361,6 +1363,34 @@
     
   
     Field Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relationship-queries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationship Queries
   
 
     
@@ -2180,15 +2210,27 @@
 <td>Dynamic methods</td>
 </tr>
 <tr>
-<td>Joins, subqueries, aggregations</td>
+<td><code>BETWEEN</code>, null checks, pattern matching</td>
+<td>Dynamic methods with <a href="../field-operations/">field operations</a></td>
+</tr>
+<tr>
+<td>Single-level relationship joins</td>
+<td>Dynamic methods with <a href="../relationship-queries/">relationship queries</a></td>
+</tr>
+<tr>
+<td>Count, exists, delete by condition</td>
+<td>Dynamic methods with <code>count_by_</code>, <code>exists_by_</code>, <code>delete_by_</code></td>
+</tr>
+<tr>
+<td>Multi-level joins, subqueries, aggregations</td>
 <td><code>@Query</code></td>
 </tr>
 <tr>
-<td><code>BETWEEN</code>, <code>ORDER BY</code>, <code>LIMIT</code> in combination</td>
+<td><code>ORDER BY</code>, <code>LIMIT</code> in combination</td>
 <td><code>@Query</code></td>
 </tr>
 <tr>
-<td>INSERT/UPDATE/DELETE operations</td>
+<td>INSERT/UPDATE operations</td>
 <td><code>@Query</code> with <code>is_modifying=True</code></td>
 </tr>
 <tr>
@@ -2248,7 +2290,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../field-operations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Field Operations">
+          <a href="../relationship-queries/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Relationship Queries">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2258,7 +2300,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Field Operations
+                Relationship Queries
               </div>
             </div>
           </a>

@@ -1205,6 +1205,8 @@
       
         
       
+        
+      
     
     
     
@@ -1361,6 +1363,34 @@
     
   
     Field Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="relationship-queries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationship Queries
   
 
     
@@ -1877,8 +1907,9 @@
 <ul>
 <li><strong>SQLModel integration</strong> — Define models as Python classes with type hints. Get automatic table creation and Pydantic validation.</li>
 <li><strong>CRUD Repository</strong> — Inherit from <code>CrudRepository</code> to get <code>save</code>, <code>find_by_id</code>, <code>delete</code>, <code>upsert</code>, and more — with zero boilerplate.</li>
-<li><strong>Dynamic query generation</strong> — Declare method signatures like <code>find_by_name_and_status</code> and PySpring implements them automatically from the method name.</li>
-<li><strong>Field operations</strong> — Use suffixes like <code>_gt</code>, <code>_in</code>, <code>_like</code>, <code>_ne</code> for comparison, membership, and pattern-matching queries.</li>
+<li><strong>Dynamic query generation</strong> — Declare method signatures like <code>find_by_name_and_status</code> and PySpring implements them automatically from the method name. Supports <code>find_by_</code>, <code>get_by_</code>, <code>find_all_by_</code>, <code>get_all_by_</code>, <code>count_by_</code>, <code>exists_by_</code>, <code>delete_by_</code>, and <code>delete_all_by_</code> prefixes.</li>
+<li><strong>Field operations</strong> — Use suffixes like <code>_gt</code>, <code>_in</code>, <code>_like</code>, <code>_between</code>, <code>_is_null</code>, <code>_starts_with</code>, <code>_contains</code>, and more for comparison, membership, range, null-check, and pattern-matching queries.</li>
+<li><strong>Relationship queries</strong> — Query across SQLModel relationships with automatic join generation — e.g., <code>find_all_by_members_status</code> generates a join to the related table.</li>
 <li><strong>Custom SQL queries</strong> — Use the <code>@Query</code> decorator for raw SQL when dynamic methods aren't enough.</li>
 <li><strong>Transaction management</strong> — Declarative <code>@Transactional</code> decorator with 7 propagation types, matching Spring's transaction model.</li>
 <li><strong>Context-based sessions</strong> — Thread-safe session handling via <code>SessionContextHolder</code> using Python <code>contextvars</code>, with automatic cleanup per HTTP request.</li>
@@ -1889,9 +1920,11 @@
     A[PySpringModel Entity] --&gt; B[CrudRepository]
     B --&gt; C[Built-in CRUD Methods]
     B --&gt; D[Dynamic Query Methods]
+    B --&gt; D2[Relationship Queries]
     B --&gt; E["@Query Custom SQL"]
     C --&gt; F["@Transactional"]
     D --&gt; F
+    D2 --&gt; F
     F --&gt; G[SessionContextHolder]
     G --&gt; H[SQLAlchemy Engine]</code></pre>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
@@ -1905,7 +1938,8 @@
 <li><strong><a href="getting-started/">Getting Started</a></strong> — Install, configure, and run your first query.</li>
 <li><strong><a href="crud-repository/">CRUD Repository</a></strong> — Built-in operations for every entity.</li>
 <li><strong><a href="dynamic-queries/">Dynamic Queries</a></strong> — Auto-implemented methods from naming conventions.</li>
-<li><strong><a href="field-operations/">Field Operations</a></strong> — Comparison, membership, and pattern-matching operators.</li>
+<li><strong><a href="field-operations/">Field Operations</a></strong> — Comparison, membership, range, null-check, and pattern-matching operators.</li>
+<li><strong><a href="relationship-queries/">Relationship Queries</a></strong> — Query across relationships with automatic join generation.</li>
 <li><strong><a href="custom-queries/">Custom Queries</a></strong> — Raw SQL with the <code>@Query</code> decorator.</li>
 <li><strong><a href="transactions/">Transaction Management</a></strong> — <code>@Transactional</code> and propagation types.</li>
 <li><strong><a href="sessions/">Session Management</a></strong> — How sessions are managed per request and per context.</li>

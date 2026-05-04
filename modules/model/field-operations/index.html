@@ -14,7 +14,7 @@
         <link rel="prev" href="../dynamic-queries/">
       
       
-        <link rel="next" href="../custom-queries/">
+        <link rel="next" href="../relationship-queries/">
       
       
         
@@ -1205,6 +1205,8 @@
       
         
       
+        
+      
     
     
     
@@ -1496,6 +1498,117 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#not-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NOT LIKE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starts-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STARTS WITH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ends-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ENDS WITH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONTAINS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Range operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Range operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#between" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BETWEEN
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#null-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Null checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Null checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IS NULL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-not-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IS NOT NULL
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1527,6 +1640,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relationship-queries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationship Queries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2047,6 +2188,117 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#not-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NOT LIKE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starts-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STARTS WITH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ends-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ENDS WITH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONTAINS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Range operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Range operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#between" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BETWEEN
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#null-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Null checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Null checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IS NULL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-not-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IS NOT NULL
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2158,6 +2410,48 @@
 <td><code>field LIKE ?</code></td>
 <td><code>find_by_name_like</code></td>
 </tr>
+<tr>
+<td>Not like</td>
+<td><code>_not_like</code></td>
+<td><code>field NOT LIKE ?</code></td>
+<td><code>find_by_name_not_like</code></td>
+</tr>
+<tr>
+<td>Between</td>
+<td><code>_between</code></td>
+<td><code>field BETWEEN ? AND ?</code></td>
+<td><code>find_all_by_age_between</code></td>
+</tr>
+<tr>
+<td>Is null</td>
+<td><code>_is_null</code></td>
+<td><code>field IS NULL</code></td>
+<td><code>find_all_by_email_is_null</code></td>
+</tr>
+<tr>
+<td>Is not null</td>
+<td><code>_is_not_null</code></td>
+<td><code>field IS NOT NULL</code></td>
+<td><code>find_all_by_email_is_not_null</code></td>
+</tr>
+<tr>
+<td>Starts with</td>
+<td><code>_starts_with</code></td>
+<td><code>field LIKE 'val%'</code></td>
+<td><code>find_by_name_starts_with</code></td>
+</tr>
+<tr>
+<td>Ends with</td>
+<td><code>_ends_with</code></td>
+<td><code>field LIKE '%val'</code></td>
+<td><code>find_by_name_ends_with</code></td>
+</tr>
+<tr>
+<td>Contains</td>
+<td><code>_contains</code></td>
+<td><code>field LIKE '%val%'</code></td>
+<td><code>find_by_name_contains</code></td>
+</tr>
 </tbody>
 </table>
 <h2 id="comparison-operations">Comparison operations<a class="headerlink" href="#comparison-operations" title="Permanent link">&para;</a></h2>
@@ -2214,37 +2508,111 @@
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">gmail_users</span> <span class="o">=</span> <span class="n">user_repo</span><span class="o">.</span><span class="n">find_all_by_email_like</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="s2">&quot;%@gmail.com&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <p>Use SQL wildcard characters (<code>%</code> for any sequence, <code>_</code> for single character) in the parameter value.</p>
-<h2 id="combining-operations">Combining operations<a class="headerlink" href="#combining-operations" title="Permanent link">&para;</a></h2>
-<p>Field operations can be combined with <code>and</code> / <code>or</code> connectors:</p>
+<h3 id="not-like">NOT LIKE<a class="headerlink" href="#not-like" title="Permanent link">&para;</a></h3>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">UserRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">User</span><span class="p">]):</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="c1"># AND combination</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_by_age_gt_and_status_in</span><span class="p">(</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="c1"># OR combination</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_by_salary_gte_or_category_in</span><span class="p">(</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">salary</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">category</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    <span class="c1"># Multiple comparisons</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_age_gte_and_age_lte</span><span class="p">(</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_name_not_like</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
 </span></code></pre></div>
 <p>Usage:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">target_users</span> <span class="o">=</span> <span class="n">user_repo</span><span class="o">.</span><span class="n">find_by_age_gt_and_status_in</span><span class="p">(</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">age</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">status</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;active&quot;</span><span class="p">,</span> <span class="s2">&quot;pending&quot;</span><span class="p">]</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">non_johns</span> <span class="o">=</span> <span class="n">user_repo</span><span class="o">.</span><span class="n">find_all_by_name_not_like</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;%John%&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="starts-with">STARTS WITH<a class="headerlink" href="#starts-with" title="Permanent link">&para;</a></h3>
+<p>Automatically appends <code>%</code> to the parameter value:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">UserRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">User</span><span class="p">]):</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_name_starts_with</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
+</span></code></pre></div>
+<p>Usage:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">users</span> <span class="o">=</span> <span class="n">user_repo</span><span class="o">.</span><span class="n">find_all_by_name_starts_with</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Jo&quot;</span><span class="p">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1"># → WHERE name LIKE &#39;Jo%&#39;</span>
+</span></code></pre></div>
+<h3 id="ends-with">ENDS WITH<a class="headerlink" href="#ends-with" title="Permanent link">&para;</a></h3>
+<p>Automatically prepends <code>%</code> to the parameter value:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">UserRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">User</span><span class="p">]):</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_email_ends_with</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
+</span></code></pre></div>
+<p>Usage:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">gmail_users</span> <span class="o">=</span> <span class="n">user_repo</span><span class="o">.</span><span class="n">find_all_by_email_ends_with</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="s2">&quot;@gmail.com&quot;</span><span class="p">)</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1"># → WHERE email LIKE &#39;%@gmail.com&#39;</span>
+</span></code></pre></div>
+<h3 id="contains">CONTAINS<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h3>
+<p>Automatically wraps the parameter value with <code>%</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">UserRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">User</span><span class="p">]):</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_name_contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
+</span></code></pre></div>
+<p>Usage:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">users</span> <span class="o">=</span> <span class="n">user_repo</span><span class="o">.</span><span class="n">find_all_by_name_contains</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;oh&quot;</span><span class="p">)</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="c1"># → WHERE name LIKE &#39;%oh%&#39;</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>_starts_with</code>, <code>_ends_with</code>, and <code>_contains</code> handle the <code>%</code> wildcards for you — unlike <code>_like</code>, you pass plain strings without wildcards.</p>
+</div>
+<h2 id="range-operations">Range operations<a class="headerlink" href="#range-operations" title="Permanent link">&para;</a></h2>
+<h3 id="between">BETWEEN<a class="headerlink" href="#between" title="Permanent link">&para;</a></h3>
+<p>Requires two parameters — <code>min_{field}</code> and <code>max_{field}</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">UserRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">User</span><span class="p">]):</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_age_between</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_age</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">max_age</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
+</span></code></pre></div>
+<p>Usage:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">users</span> <span class="o">=</span> <span class="n">user_repo</span><span class="o">.</span><span class="n">find_all_by_age_between</span><span class="p">(</span><span class="n">min_age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">max_age</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1"># → WHERE age BETWEEN 18 AND 30</span>
+</span></code></pre></div>
+<p>The parameter names must follow the <code>min_</code> / <code>max_</code> prefix convention matching the field name.</p>
+<h2 id="null-checks">Null checks<a class="headerlink" href="#null-checks" title="Permanent link">&para;</a></h2>
+<h3 id="is-null">IS NULL<a class="headerlink" href="#is-null" title="Permanent link">&para;</a></h3>
+<p>No parameter required — the field is checked for <code>NULL</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">UserRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">User</span><span class="p">]):</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_email_is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
+</span></code></pre></div>
+<p>Usage:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">users_without_email</span> <span class="o">=</span> <span class="n">user_repo</span><span class="o">.</span><span class="n">find_all_by_email_is_null</span><span class="p">()</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1"># → WHERE email IS NULL</span>
+</span></code></pre></div>
+<h3 id="is-not-null">IS NOT NULL<a class="headerlink" href="#is-not-null" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">UserRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">User</span><span class="p">]):</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_email_is_not_null</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
+</span></code></pre></div>
+<p>Usage:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">users_with_email</span> <span class="o">=</span> <span class="n">user_repo</span><span class="o">.</span><span class="n">find_all_by_email_is_not_null</span><span class="p">()</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="c1"># → WHERE email IS NOT NULL</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>_is_null</code> and <code>_is_not_null</code> operations do not take any parameters — the method signature should not include the corresponding field as a parameter.</p>
+</div>
+<h2 id="combining-operations">Combining operations<a class="headerlink" href="#combining-operations" title="Permanent link">&para;</a></h2>
+<p>Field operations can be combined with <code>and</code> / <code>or</code> connectors:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">UserRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">User</span><span class="p">]):</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    <span class="c1"># AND combination</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_by_age_gt_and_status_in</span><span class="p">(</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>    <span class="c1"># OR combination</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_by_salary_gte_or_category_in</span><span class="p">(</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">salary</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">category</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>    <span class="c1"># Multiple comparisons</span>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_age_gte_and_age_lte</span><span class="p">(</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
+</span></code></pre></div>
+<p>Usage:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">target_users</span> <span class="o">=</span> <span class="n">user_repo</span><span class="o">.</span><span class="n">find_by_age_gt_and_status_in</span><span class="p">(</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    <span class="n">age</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    <span class="n">status</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;active&quot;</span><span class="p">,</span> <span class="s2">&quot;pending&quot;</span><span class="p">]</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Add suffixes (<code>_gt</code>, <code>_in</code>, <code>_like</code>, etc.) to field names in method signatures</li>
+<li>Add suffixes (<code>_gt</code>, <code>_in</code>, <code>_like</code>, <code>_between</code>, <code>_is_null</code>, etc.) to field names in method signatures</li>
 <li>PySpring parses the suffix and generates the correct SQL operator</li>
 <li>Combine with <code>_and_</code> / <code>_or_</code> for multi-condition queries</li>
 <li>Use <code>List</code> parameter types for <code>_in</code> and <code>_not_in</code> operations</li>
-<li>Use SQL wildcards with <code>_like</code></li>
+<li>Use SQL wildcards with <code>_like</code> and <code>_not_like</code></li>
+<li>Use <code>_starts_with</code>, <code>_ends_with</code>, <code>_contains</code> for automatic wildcard handling</li>
+<li>Use <code>min_</code> / <code>max_</code> prefixed parameters for <code>_between</code> operations</li>
+<li><code>_is_null</code> and <code>_is_not_null</code> require no parameters</li>
 </ul>
 
 
@@ -2300,13 +2668,13 @@
         
         
           
-          <a href="../custom-queries/" class="md-footer__link md-footer__link--next" aria-label="Next: Custom Queries">
+          <a href="../relationship-queries/" class="md-footer__link md-footer__link--next" aria-label="Next: Relationship Queries">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Custom Queries
+                Relationship Queries
               </div>
             </div>
             <div class="md-footer__button md-icon">

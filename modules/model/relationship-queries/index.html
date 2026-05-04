@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../custom-queries/">
+        <link rel="prev" href="../field-operations/">
       
       
-        <link rel="next" href="../sessions/">
+        <link rel="next" href="../custom-queries/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Transaction Management - PySpring</title>
+        <title>Relationship Queries - PySpring</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#transaction-management" class="md-skip">
+        <a href="#relationship-queries" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Transaction Management
+              Relationship Queries
             
           </span>
         </div>
@@ -1380,10 +1380,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../relationship-queries/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationship Queries
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1399,6 +1426,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming convention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combining-with-field-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining with field operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combining-with-and-or" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining with AND / OR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#with-count-exists-and-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With count, exists, and delete
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolution-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1436,37 +1582,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Transaction Management
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../transactions/" class="md-nav__link">
         
   
   
@@ -1482,175 +1601,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Basic usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#propagation-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Propagation types
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Propagation types">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#required-default" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        REQUIRED (default)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#requires_new" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        REQUIRES_NEW
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#supports" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SUPPORTS
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mandatory" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MANDATORY
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#not_supported" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NOT_SUPPORTED
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#never" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NEVER
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nested" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NESTED
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#propagation-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Propagation summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transaction-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Transaction flow
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#error-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error handling
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exceptions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exceptions
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2032,6 +1982,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#basic-usage" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2043,104 +2015,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#propagation-types" class="md-nav__link">
+  <a href="#naming-convention" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Propagation types
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Propagation types">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#required-default" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        REQUIRED (default)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#requires_new" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        REQUIRES_NEW
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#supports" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SUPPORTS
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mandatory" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MANDATORY
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#not_supported" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NOT_SUPPORTED
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#never" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NEVER
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nested" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NESTED
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#propagation-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Propagation summary
+        Naming convention
       
     </span>
   </a>
@@ -2148,10 +2026,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#transaction-flow" class="md-nav__link">
+  <a href="#combining-with-field-operations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Transaction flow
+        Combining with field operations
       
     </span>
   </a>
@@ -2159,10 +2037,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#error-handling" class="md-nav__link">
+  <a href="#combining-with-and-or" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Error handling
+        Combining with AND / OR
       
     </span>
   </a>
@@ -2170,10 +2048,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exceptions" class="md-nav__link">
+  <a href="#with-count-exists-and-delete" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exceptions
+        With count, exists, and delete
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolution-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
       
     </span>
   </a>
@@ -2197,173 +2097,148 @@
 
 
 
-<h1 id="transaction-management">Transaction Management<a class="headerlink" href="#transaction-management" title="Permanent link">&para;</a></h1>
-<p>PySpring Model provides declarative transaction management through the <code>@Transactional</code> decorator, modeled after Spring's <code>@Transactional</code> annotation.</p>
+<h1 id="relationship-queries">Relationship Queries<a class="headerlink" href="#relationship-queries" title="Permanent link">&para;</a></h1>
+<p>PySpring Model supports querying across <strong>SQLModel relationships</strong> directly from method names. Instead of writing manual joins, declare a method that references a relationship field and PySpring generates the join automatically.</p>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<p>When PySpring parses a dynamic query method name, it checks each field token against the model's <code>Relationship</code> fields. If a token starts with a relationship name followed by a field on the related model, PySpring:</p>
+<ol>
+<li>Resolves the related model class via SQLAlchemy's mapper inspection</li>
+<li>Generates a <code>JOIN</code> to the related table</li>
+<li>Filters on the related model's column</li>
+<li>Applies <code>DISTINCT</code> to the results to avoid duplicates from the join</li>
+</ol>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>Define your models with SQLModel <code>Relationship</code> fields:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">List</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sqlmodel</span><span class="w"> </span><span class="kn">import</span> <span class="n">Relationship</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">py_spring_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">PySpringModel</span><span class="p">,</span> <span class="n">Field</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">Team</span><span class="p">(</span><span class="n">PySpringModel</span><span class="p">,</span> <span class="n">table</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">()</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">members</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="s2">&quot;User&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Relationship</span><span class="p">(</span><span class="n">back_populates</span><span class="o">=</span><span class="s2">&quot;team&quot;</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">PySpringModel</span><span class="p">,</span> <span class="n">table</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">()</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">status</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">()</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="n">team_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">foreign_key</span><span class="o">=</span><span class="s2">&quot;team.id&quot;</span><span class="p">)</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">team</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Team</span><span class="p">]</span> <span class="o">=</span> <span class="n">Relationship</span><span class="p">(</span><span class="n">back_populates</span><span class="o">=</span><span class="s2">&quot;members&quot;</span><span class="p">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="n">posts</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="s2">&quot;Post&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Relationship</span><span class="p">(</span><span class="n">back_populates</span><span class="o">=</span><span class="s2">&quot;author&quot;</span><span class="p">)</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">class</span><span class="w"> </span><span class="nc">Post</span><span class="p">(</span><span class="n">PySpringModel</span><span class="p">,</span> <span class="n">table</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">()</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="n">published</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="n">author_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">foreign_key</span><span class="o">=</span><span class="s2">&quot;user.id&quot;</span><span class="p">)</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="n">author</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="n">Relationship</span><span class="p">(</span><span class="n">back_populates</span><span class="o">=</span><span class="s2">&quot;posts&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="basic-usage">Basic usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h2>
-<p>All <code>CrudRepository</code> built-in methods are already transactional. You can also use <code>@Transactional</code> on your own methods:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">py_spring_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">Transactional</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">UserService</span><span class="p">:</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">user_repository</span><span class="p">:</span> <span class="n">UserRepository</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="nd">@Transactional</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">create_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">User</span><span class="p">:</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">)</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_repository</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+<p>Reference the relationship name followed by the target field, separated by <code>_</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">TeamRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Team</span><span class="p">]):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="c1"># Find teams that have a member with a specific status</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_members_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Team</span><span class="p">]:</span> <span class="o">...</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="c1"># → SELECT DISTINCT team.* FROM team JOIN user ON ... WHERE user.status = :status</span>
 </span></code></pre></div>
-<p>When used without parameters, <code>@Transactional</code> defaults to <code>Propagation.REQUIRED</code>.</p>
-<h2 id="propagation-types">Propagation types<a class="headerlink" href="#propagation-types" title="Permanent link">&para;</a></h2>
-<p>Control how transactions interact with each other by specifying a propagation type:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">py_spring_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">Transactional</span><span class="p">,</span> <span class="n">Propagation</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nd">@Transactional</span><span class="p">(</span><span class="n">propagation</span><span class="o">=</span><span class="n">Propagation</span><span class="o">.</span><span class="n">REQUIRES_NEW</span><span class="p">)</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">write_audit_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="c1"># Always runs in a new, independent transaction</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="o">...</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">UserRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">User</span><span class="p">]):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="c1"># Find users who have a post with a specific title</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_posts_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="c1"># → SELECT DISTINCT user.* FROM user JOIN post ON ... WHERE post.title = :title</span>
 </span></code></pre></div>
-<h3 id="required-default">REQUIRED (default)<a class="headerlink" href="#required-default" title="Permanent link">&para;</a></h3>
-<p>Join the existing transaction if one exists. Create a new transaction if none exists.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@Transactional</span>  <span class="c1"># or @Transactional(propagation=Propagation.REQUIRED)</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">create_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">User</span><span class="p">:</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="o">...</span>
+<p>Usage:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">active_teams</span> <span class="o">=</span> <span class="n">team_repo</span><span class="o">.</span><span class="n">find_all_by_members_status</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s2">&quot;active&quot;</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">authors</span> <span class="o">=</span> <span class="n">user_repo</span><span class="o">.</span><span class="n">find_all_by_posts_title</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-<p>This is the most common propagation type. Multiple <code>@Transactional(propagation=Propagation.REQUIRED)</code> calls in the same call chain share one transaction.</p>
-<h3 id="requires_new">REQUIRES_NEW<a class="headerlink" href="#requires_new" title="Permanent link">&para;</a></h3>
-<p>Always create a new, independent transaction. If an existing transaction is active, it is suspended until the new transaction completes.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nd">@Transactional</span><span class="p">(</span><span class="n">propagation</span><span class="o">=</span><span class="n">Propagation</span><span class="o">.</span><span class="n">REQUIRES_NEW</span><span class="p">)</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">write_audit_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="o">...</span>
-</span></code></pre></div>
-<p>Use this for operations that must commit independently, such as audit logging that should persist even if the outer transaction rolls back.</p>
-<h3 id="supports">SUPPORTS<a class="headerlink" href="#supports" title="Permanent link">&para;</a></h3>
-<p>Run within the existing transaction if one is active. If no transaction exists, run without one.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nd">@Transactional</span><span class="p">(</span><span class="n">propagation</span><span class="o">=</span><span class="n">Propagation</span><span class="o">.</span><span class="n">SUPPORTS</span><span class="p">)</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">read_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="o">...</span>
-</span></code></pre></div>
-<p>Useful for read-only operations that can work with or without a transaction.</p>
-<h3 id="mandatory">MANDATORY<a class="headerlink" href="#mandatory" title="Permanent link">&para;</a></h3>
-<p>Must run within an existing transaction. Raises <code>TransactionRequiredError</code> if no transaction is active.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nd">@Transactional</span><span class="p">(</span><span class="n">propagation</span><span class="o">=</span><span class="n">Propagation</span><span class="o">.</span><span class="n">MANDATORY</span><span class="p">)</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">update_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="o">...</span>
-</span></code></pre></div>
-<p>Use this to enforce that a method is always called within a transactional context.</p>
-<h3 id="not_supported">NOT_SUPPORTED<a class="headerlink" href="#not_supported" title="Permanent link">&para;</a></h3>
-<p>Suspend the existing transaction (if any) and run without one.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nd">@Transactional</span><span class="p">(</span><span class="n">propagation</span><span class="o">=</span><span class="n">Propagation</span><span class="o">.</span><span class="n">NOT_SUPPORTED</span><span class="p">)</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">send_notification</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="o">...</span>
-</span></code></pre></div>
-<h3 id="never">NEVER<a class="headerlink" href="#never" title="Permanent link">&para;</a></h3>
-<p>Must not run within a transaction. Raises <code>ExistingTransactionError</code> if a transaction is active.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nd">@Transactional</span><span class="p">(</span><span class="n">propagation</span><span class="o">=</span><span class="n">Propagation</span><span class="o">.</span><span class="n">NEVER</span><span class="p">)</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">health_check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="o">...</span>
-</span></code></pre></div>
-<h3 id="nested">NESTED<a class="headerlink" href="#nested" title="Permanent link">&para;</a></h3>
-<p>Run within a savepoint if a transaction exists. If no transaction exists, create a new one (behaves like <code>REQUIRED</code>).</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nd">@Transactional</span><span class="p">(</span><span class="n">propagation</span><span class="o">=</span><span class="n">Propagation</span><span class="o">.</span><span class="n">NESTED</span><span class="p">)</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">try_operation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="o">...</span>
-</span></code></pre></div>
-<p>If the nested operation fails, only the savepoint is rolled back — the outer transaction can continue.</p>
-<h2 id="propagation-summary">Propagation summary<a class="headerlink" href="#propagation-summary" title="Permanent link">&para;</a></h2>
+<h2 id="naming-convention">Naming convention<a class="headerlink" href="#naming-convention" title="Permanent link">&para;</a></h2>
+<p>The method name token format is <code>{relationship_name}_{related_field}</code>:</p>
 <table>
 <thead>
 <tr>
-<th>Propagation</th>
-<th>Existing Tx</th>
-<th>No Existing Tx</th>
+<th>Token</th>
+<th>Relationship</th>
+<th>Related field</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>REQUIRED</code></td>
-<td>Join</td>
-<td>Create new</td>
+<td><code>members_status</code></td>
+<td><code>members</code></td>
+<td><code>status</code></td>
 </tr>
 <tr>
-<td><code>REQUIRES_NEW</code></td>
-<td>Suspend, create new</td>
-<td>Create new</td>
+<td><code>posts_title</code></td>
+<td><code>posts</code></td>
+<td><code>title</code></td>
 </tr>
 <tr>
-<td><code>SUPPORTS</code></td>
-<td>Join</td>
-<td>Run without</td>
-</tr>
-<tr>
-<td><code>MANDATORY</code></td>
-<td>Join</td>
-<td>Raise error</td>
-</tr>
-<tr>
-<td><code>NOT_SUPPORTED</code></td>
-<td>Suspend, run without</td>
-<td>Run without</td>
-</tr>
-<tr>
-<td><code>NEVER</code></td>
-<td>Raise error</td>
-<td>Run without</td>
-</tr>
-<tr>
-<td><code>NESTED</code></td>
-<td>Create savepoint</td>
-<td>Create new</td>
+<td><code>team_name</code></td>
+<td><code>team</code></td>
+<td><code>name</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="transaction-flow">Transaction flow<a class="headerlink" href="#transaction-flow" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>sequenceDiagram
-    participant Client
-    participant ServiceA
-    participant ServiceB
-    participant Session
-
-    Client-&gt;&gt;ServiceA: @Transactional (REQUIRED)
-    ServiceA-&gt;&gt;Session: Create transaction
-    ServiceA-&gt;&gt;ServiceB: @Transactional (REQUIRED)
-    Note over ServiceB,Session: Joins existing transaction
-    ServiceB-&gt;&gt;Session: Execute query
-    ServiceB--&gt;&gt;ServiceA: Return
-    ServiceA-&gt;&gt;Session: Commit (at outermost boundary)
-    ServiceA--&gt;&gt;Client: Return</code></pre>
-<h2 id="error-handling">Error handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
-<p>If an exception occurs within a <code>@Transactional</code> method:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a token matches both a direct column and a relationship traversal, the <strong>direct column takes precedence</strong> for backwards compatibility. For example, if <code>User</code> has both a <code>team_name</code> column and a <code>team</code> relationship, <code>find_by_team_name</code> will query the direct <code>team_name</code> column.</p>
+</div>
+<h2 id="combining-with-field-operations">Combining with field operations<a class="headerlink" href="#combining-with-field-operations" title="Permanent link">&para;</a></h2>
+<p>Relationship queries support all <a href="../field-operations/">field operations</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">TeamRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Team</span><span class="p">]):</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="c1"># Members with status in a list</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_members_status_in</span><span class="p">(</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Team</span><span class="p">]:</span> <span class="o">...</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="c1"># Members with name matching a pattern</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_members_name_like</span><span class="p">(</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Team</span><span class="p">]:</span> <span class="o">...</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="c1"># Members with name starting with a prefix</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_members_name_starts_with</span><span class="p">(</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Team</span><span class="p">]:</span> <span class="o">...</span>
+</span></code></pre></div>
+<h2 id="combining-with-and-or">Combining with AND / OR<a class="headerlink" href="#combining-with-and-or" title="Permanent link">&para;</a></h2>
+<p>Relationship fields can be combined with direct fields and other relationship fields:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">TeamRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Team</span><span class="p">]):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="c1"># Team name AND member status</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_name_and_members_status</span><span class="p">(</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Team</span><span class="p">]:</span> <span class="o">...</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">class</span><span class="w"> </span><span class="nc">UserRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">User</span><span class="p">]):</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="c1"># User status AND post published flag</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find_all_by_status_and_posts_published</span><span class="p">(</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">published</span><span class="p">:</span> <span class="nb">bool</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span> <span class="o">...</span>
+</span></code></pre></div>
+<h2 id="with-count-exists-and-delete">With count, exists, and delete<a class="headerlink" href="#with-count-exists-and-delete" title="Permanent link">&para;</a></h2>
+<p>Relationship queries work with all query type prefixes:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">TeamRepository</span><span class="p">(</span><span class="n">CrudRepository</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Team</span><span class="p">]):</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="c1"># Count teams with active members</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">count_by_members_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="c1"># Check if any team has a member with this name</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">exists_by_members_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="c1"># Delete teams whose members all have a certain status</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">delete_all_by_members_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span> <span class="o">...</span>
+</span></code></pre></div>
+<p>For <code>count_by_</code> and <code>delete_</code> prefixes with joins, PySpring uses a distinct subquery on the primary key to avoid counting or deleting duplicates.</p>
+<h2 id="resolution-rules">Resolution rules<a class="headerlink" href="#resolution-rules" title="Permanent link">&para;</a></h2>
+<p>PySpring resolves relationship tokens using these rules:</p>
+<ol>
+<li><strong>Longest match first</strong> — relationship names are sorted by length (descending), so <code>team_members</code> is checked before <code>team</code></li>
+<li><strong>Direct columns take precedence</strong> — if the full token is a column on the model, it is treated as a direct column query</li>
+<li><strong>Remainder must be non-empty</strong> — the token must have characters remaining after stripping the relationship prefix to form the target field name</li>
+</ol>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The transaction (or savepoint for <code>NESTED</code>) is rolled back</li>
-<li>The exception propagates to the caller</li>
-<li>For <code>REQUIRED</code>, rollback only happens at the outermost transactional boundary</li>
+<li>Only single-level relationship traversal is supported (no chained joins like <code>team_members_posts_title</code>)</li>
+<li>The related model must be resolvable at class initialization time (forward references must be resolved)</li>
+<li>Composite foreign keys are not supported for <code>delete_</code> operations with joins</li>
 </ul>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nd">@Transactional</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">transfer_funds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">to_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">debit</span><span class="p">(</span><span class="n">from_id</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">credit</span><span class="p">(</span><span class="n">to_id</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span>  <span class="c1"># If this fails, debit is also rolled back</span>
-</span></code></pre></div>
-<h2 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Exception</th>
-<th>Raised by</th>
-<th>When</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>TransactionRequiredError</code></td>
-<td><code>MANDATORY</code></td>
-<td>No active transaction exists</td>
-</tr>
-<tr>
-<td><code>ExistingTransactionError</code></td>
-<td><code>NEVER</code></td>
-<td>An active transaction exists</td>
-</tr>
-</tbody>
-</table>
 
 
 
@@ -2401,7 +2276,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../custom-queries/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Custom Queries">
+          <a href="../field-operations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Field Operations">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2411,20 +2286,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Custom Queries
+                Field Operations
               </div>
             </div>
           </a>
         
         
           
-          <a href="../sessions/" class="md-footer__link md-footer__link--next" aria-label="Next: Session Management">
+          <a href="../custom-queries/" class="md-footer__link md-footer__link--next" aria-label="Next: Custom Queries">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Session Management
+                Custom Queries
               </div>
             </div>
             <div class="md-footer__button md-icon">
