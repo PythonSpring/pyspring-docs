@@ -96,9 +96,12 @@ def purge_users_by_status(self, status: str) -> List[User]: ...
 | Scenario | Use |
 |----------|-----|
 | Simple equality, comparison, or membership filters | Dynamic methods |
-| Joins, subqueries, aggregations | `@Query` |
-| `BETWEEN`, `ORDER BY`, `LIMIT` in combination | `@Query` |
-| INSERT/UPDATE/DELETE operations | `@Query` with `is_modifying=True` |
+| `BETWEEN`, null checks, pattern matching | Dynamic methods with [field operations](field-operations.md) |
+| Single-level relationship joins | Dynamic methods with [relationship queries](relationship-queries.md) |
+| Count, exists, delete by condition | Dynamic methods with `count_by_`, `exists_by_`, `delete_by_` |
+| Multi-level joins, subqueries, aggregations | `@Query` |
+| `ORDER BY`, `LIMIT` in combination | `@Query` |
+| INSERT/UPDATE operations | `@Query` with `is_modifying=True` |
 | Complex `WHERE` clauses | `@Query` |
 
 ## Combining with dynamic methods

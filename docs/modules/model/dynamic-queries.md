@@ -24,6 +24,10 @@ At startup, `CrudRepositoryImplementationService` parses each method name, extra
 | `get_by_` | `Optional[Model]` | Same as `find_by_` |
 | `find_all_by_` | `List[Model]` | Returns a list of results |
 | `get_all_by_` | `List[Model]` | Same as `find_all_by_` |
+| `count_by_` | `int` | Returns the count of matching records |
+| `exists_by_` | `bool` | Returns `True` if any matching record exists |
+| `delete_by_` | `int` | Deletes a single matching record, returns row count |
+| `delete_all_by_` | `int` | Deletes all matching records, returns row count |
 
 ### Single field
 
@@ -53,6 +57,36 @@ def find_by_name_or_email(self, name: str, email: str) -> Optional[User]: ...
 
 def find_all_by_status_or_age(self, status: str, age: int) -> List[User]: ...
 # → WHERE status = :status OR age = :age
+```
+
+### Count, exists, and delete
+
+```python
+class UserRepository(CrudRepository[int, User]):
+    # Count matching records
+    def count_by_status(self, status: str) -> int: ...
+    # → SELECT COUNT(*) FROM user WHERE status = :status
+
+    # Check existence
+    def exists_by_email(self, email: str) -> bool: ...
+    # → SELECT COUNT(*) FROM user WHERE email = :email > 0
+
+    # Delete single match
+    def delete_by_name(self, name: str) -> int: ...
+    # → DELETE FROM user WHERE name = :name
+
+    # Delete all matches
+    def delete_all_by_status(self, status: str) -> int: ...
+    # → DELETE FROM user WHERE status = :status
+```
+
+These prefixes work with all the same features — multiple fields, `_and_`/`_or_` connectors, and [field operations](field-operations.md):
+
+```python
+class UserRepository(CrudRepository[int, User]):
+    def count_by_status_and_age_gt(self, status: str, age: int) -> int: ...
+    def exists_by_name_and_email(self, name: str, email: str) -> bool: ...
+    def delete_all_by_status_in(self, status: List[str]) -> int: ...
 ```
 
 ## Parameter mapping
@@ -101,6 +135,9 @@ The prefix determines the expected return type:
 |---------------|---------------------|
 | `find_by_*` / `get_by_*` | `Optional[Model]` |
 | `find_all_by_*` / `get_all_by_*` | `List[Model]` |
+| `count_by_*` | `int` |
+| `exists_by_*` | `bool` |
+| `delete_by_*` / `delete_all_by_*` | `int` |
 
 ## Combining with field operations
 
@@ -112,6 +149,17 @@ def find_by_age_gt_and_status_in(self, age: int, status: List[str]) -> Optional[
 ```
 
 See the [Field Operations](field-operations.md) page for all available operators.
+
+## Relationship traversal
+
+Dynamic queries can traverse SQLModel `Relationship` fields to query across related models with automatic joins:
+
+```python
+def find_all_by_members_status(self, status: str) -> List[Team]: ...
+# → SELECT DISTINCT team.* FROM team JOIN user ON ... WHERE user.status = :status
+```
+
+See the [Relationship Queries](relationship-queries.md) page for full details.
 
 ## SkipAutoImplementation
 

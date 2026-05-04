@@ -78,6 +78,7 @@ nav:
       - CRUD Repository: modules/model/crud-repository.md
       - Dynamic Queries: modules/model/dynamic-queries.md
       - Field Operations: modules/model/field-operations.md
+      - Relationship Queries: modules/model/relationship-queries.md
       - Custom Queries: modules/model/custom-queries.md
       - Transaction Management: modules/model/transactions.md
       - Session Management: modules/model/sessions.md
