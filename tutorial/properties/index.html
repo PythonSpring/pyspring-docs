@@ -800,6 +800,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#recap" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1070,6 +1081,8 @@
       
         
       
+        
+      
     
     
     
@@ -1125,6 +1138,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/environment-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -2010,6 +2051,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#recap" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2123,6 +2175,14 @@
 <p class="admonition-title">Note</p>
 <p>The file format is detected from the file extension (<code>.json</code>, <code>.yaml</code>, or <code>.yml</code>).</p>
 </div>
+<h2 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h2>
+<p>You can use <code>${VAR}</code> and <code>${VAR:default}</code> placeholders in your config files to source values from environment variables at runtime:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">database</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DB_HOST:localhost}</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DB_PORT:5432}</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DB_NAME}</span>
+</span></code></pre></div>
+<p>See the <a href="../../advanced/environment-variables/">Environment Variables</a> guide for full details.</p>
 <h2 id="recap">Recap<a class="headerlink" href="#recap" title="Permanent link">&para;</a></h2>
 <p>Properties give you type-safe, validated configuration.</p>
 <ul>
@@ -2131,6 +2191,7 @@
 <li>Inject into components using type hints</li>
 <li>Supports JSON and YAML</li>
 <li>Use <code>Field(default=...)</code> for optional values</li>
+<li>Use <code>${VAR}</code> placeholders for environment-specific values</li>
 </ul>
 <p>Next, let's learn about <strong>Dependency Injection</strong> — the mechanism that makes all this wiring work automatically.</p>
 
