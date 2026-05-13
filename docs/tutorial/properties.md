@@ -104,6 +104,19 @@ PySpring supports both JSON and YAML for configuration files:
 !!! note
     The file format is detected from the file extension (`.json`, `.yaml`, or `.yml`).
 
+## Environment variables
+
+You can use `${VAR}` and `${VAR:default}` placeholders in your config files to source values from environment variables at runtime:
+
+```yaml
+database:
+  host: ${DB_HOST:localhost}
+  port: ${DB_PORT:5432}
+  name: ${DB_NAME}
+```
+
+See the [Environment Variables](../advanced/environment-variables.md) guide for full details.
+
 ## Recap
 
 Properties give you type-safe, validated configuration.
@@ -113,5 +126,6 @@ Properties give you type-safe, validated configuration.
 * Inject into components using type hints
 * Supports JSON and YAML
 * Use `Field(default=...)` for optional values
+* Use `${VAR}` placeholders for environment-specific values
 
 Next, let's learn about **Dependency Injection** — the mechanism that makes all this wiring work automatically.

@@ -68,6 +68,7 @@ nav:
       - Skills — Claude Code Integration: tutorial/skills.md
     - Advanced User Guide:
       - advanced/index.md
+      - Environment Variables: advanced/environment-variables.md
       - Qualifier Support: advanced/qualifier-support.md
       - Component Lifecycle: advanced/component-lifecycle.md
       - Starters: advanced/starters.md
